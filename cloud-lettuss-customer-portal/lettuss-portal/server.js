@@ -344,45 +344,6 @@ app.post('/customer-portal/api/save-neo4j-query', async (req, res) => {
 const apiRouter = express.Router();
 
 // Routes
-app.get('/simulation/', (req, res) => {
-    const sessionID = req.session.sessionID || generateUniqueSessionId();
-    console.log("simulation - sessionID: " + sessionID);
-    const companyName = req.query.companyName || 'InsureYourTech.Cloud - Simulation Company';
-    const userId = req.query.userId || '1'; // Simulation userID =1
-    const envVars = {
-        apiBaseUrl: process.env.IS_PROD === "true" ? process.env.PROD_API_BASE_URL : process.env.DEV_API_BASE_URL,
-        appBaseUrl: process.env.IS_PROD === "true" ? process.env.PROD_APP_BASE_URL : process.env.DEV_APP_BASE_URL,
-        isSSLBypassed: process.env.SSL_BYPASS === "true" ? false : true,
-        isDevelopment: process.env.IS_PROD !== "true" ? true : false,
-        companyName: companyName,
-        userId: userId,
-        sessionID: sessionID
-    };
-    // Serve the chart.js library
-    app.use(express.static(path.join(__dirname, 'node_modules', 'chart.js', 'dist')));
-    
-    // Read the HTML file
-    let html = fs.readFileSync(path.join(__dirname, 'public', 'simulation-index.html'), 'utf8');
-    
-    // Insert the environment variables as a global object
-    const envScript = `<script>window.ENV = ${JSON.stringify(envVars)};</script>`;
-    
-    // Insert the script just after the <head> tag
-    html = html.replace('<head>', '<head>' + envScript);
-    
-    // Replace the companyName placeholder with the actual company name
-    html = html.replace('{{companyName}}', companyName);
-
-    // Replace the userId placeholder with the actual user ID
-    html = html.replace('{{userId}}', userId);
-
-    // Replace the sessionID placeholder with the actual session ID
-    html = html.replace('{{sessionID}}', sessionID);
-        
-    res.send(html);
-});
-
-// Routes
 
 // PostgreSQL connection
 const pool = new Pool({
