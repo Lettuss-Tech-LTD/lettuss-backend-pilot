@@ -25,6 +25,42 @@ cd ../cloud-lettuss-customer-portal
 docker compose up -d
 ```
 
+## Make commands
+Start both stacks:
+```
+make all
+```
+
+Stop both stacks:
+```
+make all_down
+```
+
+Start only the API:
+```
+make lettuss_api
+```
+
+Stop only the API:
+```
+make lettuss_api_down
+```
+
+Start only the portal:
+```
+make lettuss_portal
+```
+
+Stop only the portal:
+```
+make lettuss_portal_down
+```
+
+Show available targets:
+```
+make help
+```
+
 ## Local HTTPS (self-signed)
 - Certs are mounted from `cloud-lettuss-properties-api/certs/`.
 - For Node HTTPS in containers, set `SSL_ENABLED=true` (already in docker-compose).

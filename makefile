@@ -1,5 +1,13 @@
 all: lettuss_api lettuss_portal
 all_down: lettuss_api_down lettuss_portal_down
+help:
+	@echo "Lettus Make targets:"
+	@echo "  make all            Start API and portal stacks"
+	@echo "  make all_down       Stop API and portal stacks"
+	@echo "  make lettuss_api    Start API stack"
+	@echo "  make lettuss_api_down  Stop API stack"
+	@echo "  make lettuss_portal    Start portal stack"
+	@echo "  make lettuss_portal_down Stop portal stack"
 
 lettuss_api:
 	sleep 1
