@@ -1,0 +1,42 @@
+ip,count,city,region,country,loc,postal,timezone,asn,company,privacy,abuse,domains
+86.165.158.60,248,West Ealing,England,GB,"51.5136,-0.3229",W13,Europe/London,{},{},{},{},{}
+135.0.0.0,248,Ajax,Ontario,CA,"43.8501,-79.0329",L1S,America/Toronto,{},{},{},{},{}
+45.148.10.34,113,Lelystad,Flevoland,NL,"52.5083,5.4750",8224,Europe/Amsterdam,{},{},{},{},{}
+34.105.214.117,86,London,England,GB,"51.5085,-0.1257",E1W,Europe/London,{},{},{},{},{}
+162.243.240.133,19,Secaucus,New Jersey,US,"40.7895,-74.0565",07094,America/New_York,{},{},{},{},{}
+147.185.133.93,6,Hamina,Kymenlaakso,FI,"60.5697,27.1979",49400,Europe/Helsinki,{},{},{},{},{}
+108.0.0.0,6,Ashburn,Virginia,US,"39.0437,-77.4875",20147,America/New_York,{},{},{},{},{}
+92.255.57.178,4,Moscow,Moscow,RU,"55.7522,37.6156",101000,Europe/Moscow,{},{},{},{},{}
+92.255.57.58,4,Moscow,Moscow,RU,"55.7522,37.6156",101000,Europe/Moscow,{},{},{},{},{}
+209.126.83.235,4,St. Louis,Missouri,US,"38.6273,-90.1979",63101,America/Chicago,{},{},{},{},{}
+195.96.138.109,3,Luton,England,GB,"51.8797,-0.4175",LU1,Europe/London,{},{},{},{},{}
+65.49.1.15,2,San Francisco,California,US,"37.7749,-122.4194",94102,America/Los_Angeles,{},{},{},{},{}
+104.152.52.66,2,Chicago,Illinois,US,"41.8500,-87.6500",60666,America/Chicago,{},{},{},{},{}
+115.0.0.0,2,Seoul,Seoul,KR,"37.5660,126.9784",03141,Asia/Seoul,{},{},{},{},{}
+65.49.1.11,2,San Francisco,California,US,"37.7749,-122.4194",94102,America/Los_Angeles,{},{},{},{},{}
+194.50.16.252,2,Lelystad,Flevoland,NL,"52.5083,5.4750",8224,Europe/Amsterdam,{},{},{},{},{}
+122.96.28.187,2,Shanghai,Shanghai,CN,"31.2222,121.4581",200000,Asia/Shanghai,{},{},{},{},{}
+20.65.193.168,2,San Antonio,Texas,US,"29.4241,-98.4936",78205,America/Chicago,{},{},{},{},{}
+104.234.115.82,2,Ashburn,Virginia,US,"39.0437,-77.4875",20147,America/New_York,{},{},{},{},{}
+65.0.67.124,2,Mumbai,Maharashtra,IN,"19.0728,72.8826",400017,Asia/Kolkata,{},{},{},{},{}
+185.242.226.117,2,Amsterdam,North Holland,NL,"52.3740,4.8897",1012,Europe/Amsterdam,{},{},{},{},{}
+123.0.0.0,2,Seoul,Seoul,KR,"37.5660,126.9784",03141,Asia/Seoul,{},{},{},{},{}
+124.31.107.160,2,Shanghai,Shanghai,CN,"31.2222,121.4581",200000,Asia/Shanghai,{},{},{},{},{}
+152.42.136.45,2,Amsterdam,North Holland,NL,"52.3740,4.8897",1012,Europe/Amsterdam,{},{},{},{},{}
+20.150.206.166,2,Phoenix,Arizona,US,"33.4484,-112.0740",85001,America/Phoenix,{},{},{},{},{}
+65.49.1.14,2,San Francisco,California,US,"37.7749,-122.4194",94102,America/Los_Angeles,{},{},{},{},{}
+120.0.0.0,2,Shanghai,Shanghai,CN,"31.2222,121.4581",200000,Asia/Shanghai,{},{},{},{},{}
+82.102.27.163,2,Oslo,Oslo,NO,"59.9127,10.7461",0001,Europe/Oslo,{},{},{},{},{}
+65.49.1.22,2,San Francisco,California,US,"37.7749,-122.4194",94102,America/Los_Angeles,{},{},{},{},{}
+24.1.0.0,2,North Chicago,Illinois,US,"42.3256,-87.8412",60064,America/Chicago,{},{},{},{},{}
+65.49.1.21,2,San Francisco,California,US,"37.7749,-122.4194",94102,America/Los_Angeles,{},{},{},{},{}
+65.49.1.19,2,San Francisco,California,US,"37.7749,-122.4194",94102,America/Los_Angeles,{},{},{},{},{}
+35.203.211.191,1,London,England,GB,"51.5085,-0.1257",E1W,Europe/London,{},{},{},{},{}
+147.185.132.134,1,Moncks Corner,South Carolina,US,"33.1963,-80.0143",29461,America/New_York,{},{},{},{},{}
+20.29.35.243,1,Des Moines,Iowa,US,"41.6005,-93.6091",50307,America/Chicago,{},{},{},{},{}
+20.83.145.33,1,Ashburn,Virginia,US,"39.0437,-77.4875",20147,America/New_York,{},{},{},{},{}
+66.249.77.44,1,Council Bluffs,Iowa,US,"41.2619,-95.8608",51502,America/Chicago,{},{},{},{},{}
+196.251.117.216,1,Amsterdam,North Holland,NL,"52.3740,4.8897",1012,Europe/Amsterdam,{},{},{},{},{}
+43.130.111.40,1,Ashburn,Virginia,US,"39.0437,-77.4875",20147,America/New_York,{},{},{},{},{}
+0.0.0.0,1,N/A,N/A,N/A,N/A,N/A,N/A,{},{},{},{},{}
+20.171.27.9,1,Phoenix,Arizona,US,"33.4484,-112.0740",85001,America/Phoenix,{},{},{},{},{}

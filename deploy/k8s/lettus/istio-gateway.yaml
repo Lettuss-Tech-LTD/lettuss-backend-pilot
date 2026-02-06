@@ -1,0 +1,61 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: lettus-gateway
+  namespace: lettus
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port:
+        number: 443
+        name: https-lettus
+        protocol: HTTPS
+      tls:
+        mode: SIMPLE
+        credentialName: lettusslettings-tls
+      hosts:
+        - lettusslettings.co.uk
+        - api.lettusslettings.co.uk
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: lettus-routing
+  namespace: lettus
+spec:
+  hosts:
+    - lettusslettings.co.uk
+  gateways:
+    - lettus-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /customer-portal
+        - uri:
+            prefix: /lettus-portal
+      route:
+        - destination:
+            host: lettuss-portal
+            port:
+              number: 8184
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: lettus-api-routing
+  namespace: lettus
+spec:
+  hosts:
+    - api.lettusslettings.co.uk
+  gateways:
+    - lettus-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /lettus
+      route:
+        - destination:
+            host: lettus-node-api
+            port:
+              number: 8183

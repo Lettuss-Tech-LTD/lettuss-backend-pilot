@@ -1,0 +1,24 @@
+[req]
+default_bits              = 2048
+req_extensions            = extension_requirements
+distinguished_name        = dn_requirements
+prompt                    = no
+
+[extension_requirements]
+basicConstraints          = CA:FALSE
+keyUsage                  = nonRepudiation, digitalSignature, keyEncipherment
+subjectAltName            = @sans_list
+
+[dn_requirements]
+countryName               = GB
+stateOrProvinceName       = London
+localityName              = London
+0.organizationName        = FUEL DATASCIENCE BIGDATA LIMITED
+organizationalUnitName    = InsureYourTech.Cloud
+commonName                = api-cloud-risk.insureyourtech.cloud
+emailAddress              = business@insureyourtech.com
+
+[sans_list]
+DNS.1                     = api-cloud-risk.insureyourtech.cloud
+DNS.2                     = simulation-cloud-risk.insureyourtech.cloud
+DNS.3                     = customer-cloud-risk.insureyourtech.cloud

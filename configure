@@ -1,0 +1,2 @@
+#!/bin/bash
+make config_where_am_I_running

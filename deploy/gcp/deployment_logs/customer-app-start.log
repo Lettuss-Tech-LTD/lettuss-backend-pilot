@@ -1,0 +1,887 @@
+Attaching to cloud-risk-portal, cloudrisk-customer_portal_app_customer_portal_app_1, cloudrisk-customer_portal_app_customer_graph_1
+[33mcustomer_graph_1       |[0m Changed password for user 'neo4j'. IMPORTANT: this change will only take effect if performed before the database is started for the first time.
+[33mcustomer_graph_1       |[0m 2025-03-23 23:15:04.507+0000 INFO  Logging config in use: File '/var/lib/neo4j/conf/user-logs.xml'
+[33mcustomer_graph_1       |[0m 2025-03-23 23:15:04.551+0000 INFO  Starting...
+[33mcustomer_graph_1       |[0m 2025-03-23 23:15:06.712+0000 INFO  This instance is ServerId{61717d7d} (61717d7d-7822-47c2-bcf8-dfb0a20aae09)
+[33mcustomer_graph_1       |[0m 2025-03-23 23:15:09.099+0000 INFO  ======== Neo4j 5.25.1 ========
+[33mcustomer_graph_1       |[0m 2025-03-23 23:15:16.157+0000 INFO  Anonymous Usage Data is being sent to Neo4j, see https://neo4j.com/docs/usage-data/
+[33mcustomer_graph_1       |[0m 2025-03-23 23:15:16.343+0000 INFO  Bolt enabled on 0.0.0.0:7687.
+[33mcustomer_graph_1       |[0m 2025-03-23 23:15:19.540+0000 INFO  HTTP enabled on 0.0.0.0:7474.
+[33mcustomer_graph_1       |[0m 2025-03-23 23:15:19.543+0000 INFO  Remote interface available at http://localhost:7474/
+[33mcustomer_graph_1       |[0m 2025-03-23 23:15:19.556+0000 INFO  id: 2AED9AE976290B6291442943EABBA49E0413D5D7205BAD4E7A767D6E562D0DB7
+[33mcustomer_graph_1       |[0m 2025-03-23 23:15:19.560+0000 INFO  name: system
+[33mcustomer_graph_1       |[0m 2025-03-23 23:15:19.565+0000 INFO  creationDate: 2025-03-17T01:12:57.238Z
+[33mcustomer_graph_1       |[0m 2025-03-23 23:15:19.565+0000 INFO  Started.
+[33mcustomer_graph_1       |[0m 2025-03-24 02:33:30.038+0000 ERROR Increase in network aborts detected (more than 2 network related connection aborts over a period of 600000 ms) - This may indicate an issue with the network environment or an overload condition
+[33mcustomer_graph_1       |[0m 2025-03-24 04:16:00.863+0000 INFO  Network abort rate has normalized
+[33mcustomer_graph_1       |[0m 2025-03-24 17:26:58.485+0000 ERROR Increase in network aborts detected (more than 2 network related connection aborts over a period of 600000 ms) - This may indicate an issue with the network environment or an overload condition
+[33mcustomer_graph_1       |[0m 2025-03-24 19:40:26.894+0000 INFO  Network abort rate has normalized
+[33mcustomer_graph_1       |[0m 2025-03-24 22:04:24.629+0000 ERROR Increase in network aborts detected (more than 2 network related connection aborts over a period of 600000 ms) - This may indicate an issue with the network environment or an overload condition
+[33mcustomer_graph_1       |[0m 2025-03-25 09:49:04.486+0000 INFO  Network abort rate has normalized
+[33mcustomer_graph_1       |[0m 2025-03-25 12:12:00.560+0000 ERROR Increase in network aborts detected (more than 2 network related connection aborts over a period of 600000 ms) - This may indicate an issue with the network environment or an overload condition
+[33mcustomer_graph_1       |[0m 2025-03-26 00:02:31.423+0000 INFO  Network abort rate has normalized
+[33mcustomer_graph_1       |[0m 2025-03-26 00:02:31.426+0000 ERROR Increase in network aborts detected (more than 2 network related connection aborts over a period of 600000 ms) - This may indicate an issue with the network environment or an overload condition
+[33mcustomer_graph_1       |[0m 2025-03-28 01:35:07.953+0000 ERROR Increase in network aborts detected (more than 2 network related connection aborts over a period of 600000 ms) - This may indicate an issue with the network environment or an overload condition
+[33mcustomer_graph_1       |[0m 2025-03-28 01:35:07.953+0000 INFO  Network abort rate has normalized
+[33mcustomer_graph_1       |[0m 2025-03-31 00:02:12.274+0000 INFO  Network abort rate has normalized
+[33mcustomer_graph_1       |[0m 2025-03-31 00:02:12.274+0000 ERROR Increase in network aborts detected (more than 2 network related connection aborts over a period of 600000 ms) - This may indicate an issue with the network environment or an overload condition
+[33mcustomer_graph_1       |[0m 2025-03-31 12:46:47.474+0000 INFO  Network abort rate has normalized
+[33mcustomer_graph_1       |[0m 2025-03-31 12:51:58.767+0000 ERROR Increase in network aborts detected (more than 2 network related connection aborts over a period of 600000 ms) - This may indicate an issue with the network environment or an overload condition
+[33mcustomer_graph_1       |[0m 2025-04-08 13:30:44.775+0000 INFO  Network abort rate has normalized
+[33mcustomer_graph_1       |[0m 2025-04-08 13:30:44.778+0000 ERROR Increase in network aborts detected (more than 2 network related connection aborts over a period of 600000 ms) - This may indicate an issue with the network environment or an overload condition
+[36mcloud-risk-portal      |[0m 
+[36mcloud-risk-portal      |[0m > cloud-risk-portal@1.0.0 start
+[36mcloud-risk-portal      |[0m > node server.js
+[36mcloud-risk-portal      |[0m 
+[36mcloud-risk-portal      |[0m Server - new session - sessionSecret: 838334628d785b6ea5a46be5810a2f13ad1cfcb37abef931e39479486f7cb617
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 66e191d5a92bbdd57e809e47351de437
+[36mcloud-risk-portal      |[0m simulation - sessionID: 17ba375ecb9d030603a97cbf32af4798
+[36mcloud-risk-portal      |[0m simulation - sessionID: d51a1cd85af5a45790978c6dc321f381
+[36mcloud-risk-portal      |[0m simulation - sessionID: 8031b3a68dd95809b868689683da4a68
+[36mcloud-risk-portal      |[0m simulation - sessionID: a6dbf21639175627a7b282570ed46878
+[36mcloud-risk-portal      |[0m simulation - sessionID: a5b3152f87b3980c5d148ce8066c3354
+[36mcloud-risk-portal      |[0m simulation - sessionID: 31412632a4e74306d6a93fc1ed2ff363
+[36mcloud-risk-portal      |[0m simulation - sessionID: 9ec967f091fbf282123d1d9d8d4a8ee2
+[36mcloud-risk-portal      |[0m simulation - sessionID: 2204e46584e21cef32e382ee74b52297
+[36mcloud-risk-portal      |[0m simulation - sessionID: d9ba9e40685665513e23facdfa1a7284
+[36mcloud-risk-portal      |[0m simulation - sessionID: 62caea0f4e2c9ade6846364c0ee25cfe
+[36mcloud-risk-portal      |[0m simulation - sessionID: 40249ac138055b3d235f67bf8e9cf61f
+[36mcloud-risk-portal      |[0m simulation - sessionID: 120af900e8ce8007b7a7362762ddfba0
+[36mcloud-risk-portal      |[0m simulation - sessionID: 74f37447ab0a64d80e6b96288d6b12ec
+[36mcloud-risk-portal      |[0m simulation - sessionID: 657185cfe8669b26c48b5a92fd409a77
+[36mcloud-risk-portal      |[0m simulation - sessionID: 98841d5e916d7131f305993b5e87bf50
+[36mcloud-risk-portal      |[0m simulation - sessionID: 60e32c2e47949f36344da7d6aebc2c1c
+[36mcloud-risk-portal      |[0m simulation - sessionID: 3ede7b7fc95ac7aa5c6c6b11171e90f7
+[36mcloud-risk-portal      |[0m simulation - sessionID: 415b920bd232706f5267c7e68f2bfe65
+[36mcloud-risk-portal      |[0m simulation - sessionID: 25d162655316bb07a07ad5527b550a72
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 41b19aec655cc0bb4d2372b4f700c172
+[36mcloud-risk-portal      |[0m simulation - sessionID: 91fc44bea1457e41faf766eb80f27dbd
+[36mcloud-risk-portal      |[0m simulation - sessionID: df2f5ea6d7b95b9134592fc4d1391e59
+[36mcloud-risk-portal      |[0m simulation - sessionID: c824d06989464639eccb5f6a14700294
+[36mcloud-risk-portal      |[0m simulation - sessionID: 5a6c5d593792051253cfb7b269e9934e
+[36mcloud-risk-portal      |[0m simulation - sessionID: b8b4ae9fc1dbea1a4c0077bd31a9512c
+[36mcloud-risk-portal      |[0m simulation - sessionID: 809bd7bbf50e5ad1309aade3430e07a2
+[36mcloud-risk-portal      |[0m simulation - sessionID: b29ff821d63098ea5867555c7a99ff0a
+[36mcloud-risk-portal      |[0m simulation - sessionID: ad35b1d7b5831c459e0cb46a49cc819b
+[36mcloud-risk-portal      |[0m simulation - sessionID: 7c0b37a53b1eafd79a66da495fdb0d31
+[36mcloud-risk-portal      |[0m simulation - sessionID: 072cbffe877fe04d12ccaed704c470b5
+[36mcloud-risk-portal      |[0m simulation - sessionID: 4cad78f27d3d34a40bd6d420480256f3
+[36mcloud-risk-portal      |[0m simulation - sessionID: 616d2a007c4392bb7cb1b06226f1a6b2
+[36mcloud-risk-portal      |[0m simulation - sessionID: 2793df2473b376da60cd27c62484a127
+[36mcloud-risk-portal      |[0m simulation - sessionID: 1859f323e10e6c899412f7c9e4a3cf7c
+[36mcloud-risk-portal      |[0m simulation - sessionID: bedffb27a657bba5073af0b25872c106
+[36mcloud-risk-portal      |[0m simulation - sessionID: f159cd967938616817af465578d59d45
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 5380b4bb6d94eb4aa130d85f540b56dd
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: afe548cbeec3203890f4aa868d88df3f
+[36mcloud-risk-portal      |[0m simulation - sessionID: 53d31392d9a8f6f58a0c3fc75961d277
+[36mcloud-risk-portal      |[0m simulation - sessionID: 5d3be99db14add31cfaedefbd1158201
+[36mcloud-risk-portal      |[0m simulation - sessionID: 333fa52c6e5f11a7e63d65a457680072
+[36mcloud-risk-portal      |[0m simulation - sessionID: 43fed6d217ed957ed928e3c91c8d3b8f
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 5622aada053315318247948a74646d10
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 43fed6d217ed957ed928e3c91c8d3b8f
+[36mcloud-risk-portal      |[0m Session_id not found in the database - creating new submission
+[36mcloud-risk-portal      |[0m save submission - sessionId: 43fed6d217ed957ed928e3c91c8d3b8f
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m save submission - sessionId: 43fed6d217ed957ed928e3c91c8d3b8f
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m simulation - sessionID: 02d978e6fad3f44efb226002c3ee90f1
+[36mcloud-risk-portal      |[0m simulation - sessionID: 0018034e275c41a3e62ee7430fc65384
+[36mcloud-risk-portal      |[0m simulation - sessionID: 13023c967752e08e4a9fdb0720e55c7c
+[36mcloud-risk-portal      |[0m simulation - sessionID: 4642405e14c5d6fcea5a6af2a4e11e47
+[36mcloud-risk-portal      |[0m simulation - sessionID: 4e0ae70b5c0635cd0ba6abb7fe436986
+[36mcloud-risk-portal      |[0m simulation - sessionID: 74d35e6859ca10d1c6e15067619646a0
+[36mcloud-risk-portal      |[0m simulation - sessionID: 78e1764c155955283d1d5d39b24a374e
+[36mcloud-risk-portal      |[0m simulation - sessionID: c736f8734bb49ce63160e1c42ecc9aa6
+[36mcloud-risk-portal      |[0m simulation - sessionID: c056343433291a157def9a45a00e7b22
+[36mcloud-risk-portal      |[0m simulation - sessionID: 3695f323bc89766a67faca2212f997cc
+[36mcloud-risk-portal      |[0m simulation - sessionID: 41aa0147e8f996809186d69fd6eceaef
+[36mcloud-risk-portal      |[0m simulation - sessionID: 0cad05b8e79bb1ac185b14af6c376e3c
+[36mcloud-risk-portal      |[0m simulation - sessionID: 3a47b5f07ba16c96550a4d35da647037
+[36mcloud-risk-portal      |[0m simulation - sessionID: 67fb6f3c74c64eb9eaff6b784a30e012
+[36mcloud-risk-portal      |[0m simulation - sessionID: ecfca7a9331bd10321eea0af3e787e14
+[36mcloud-risk-portal      |[0m simulation - sessionID: 6c73e655351e2446b6998aaaccc244ef
+[36mcloud-risk-portal      |[0m simulation - sessionID: 8f58ee8f05ce03a892c5cc42e70d4f72
+[36mcloud-risk-portal      |[0m simulation - sessionID: 0804c029ec3dc04d67d0f3c88a3bf069
+[36mcloud-risk-portal      |[0m simulation - sessionID: cbad2bf2e94cdbddb6a1f10786b90076
+[36mcloud-risk-portal      |[0m simulation - sessionID: 4ce23cf020d379d10f34479cc1e6dc94
+[36mcloud-risk-portal      |[0m simulation - sessionID: a66c8cee721546ffe49d560f7c049c98
+[36mcloud-risk-portal      |[0m simulation - sessionID: 37b2501165ca5a6eb339c80f6378ef2a
+[36mcloud-risk-portal      |[0m simulation - sessionID: 6397228fb4b0b1633d89a40c567d983c
+[36mcloud-risk-portal      |[0m simulation - sessionID: 98de5391c8b9896ab91cb883ee01f7c2
+[36mcloud-risk-portal      |[0m simulation - sessionID: f77d0043bff67783444aa2dddf96794d
+[36mcloud-risk-portal      |[0m simulation - sessionID: 4657447d06dfcb85738ea586b20e254c
+[36mcloud-risk-portal      |[0m simulation - sessionID: b51cddf9550b9616d54c5c8e7b5abd47
+[36mcloud-risk-portal      |[0m simulation - sessionID: cccc4a793f91e449f6a8c90676f8e820
+[36mcloud-risk-portal      |[0m simulation - sessionID: a94384b465d3ff11488c5218cb317c68
+[36mcloud-risk-portal      |[0m simulation - sessionID: b232c192f6aa8c54c1e0d6f1e58ef104
+[36mcloud-risk-portal      |[0m simulation - sessionID: 76d1491ce4cde8e6b4a192e34ddfb08e
+[36mcloud-risk-portal      |[0m simulation - sessionID: fe81a6d97293464c66cf11fe9341b798
+[36mcloud-risk-portal      |[0m simulation - sessionID: d9eb3581d2ad7d51dd5c976302e79239
+[36mcloud-risk-portal      |[0m simulation - sessionID: 782df587a3f872a8cff2c25aa70d51fa
+[36mcloud-risk-portal      |[0m simulation - sessionID: ada3f5724985385dab097671e891a20d
+[36mcloud-risk-portal      |[0m simulation - sessionID: 1a9c46b8b76887f619158b609bb72c2e
+[36mcloud-risk-portal      |[0m simulation - sessionID: d41faeca12e11eb7e21e8f6599603b7d
+[36mcloud-risk-portal      |[0m simulation - sessionID: dc7f21393ebf4741df419ecbc1a0eec8
+[36mcloud-risk-portal      |[0m simulation - sessionID: c8895ffa39d1ec46ad75b16ff25ec5d0
+[36mcloud-risk-portal      |[0m simulation - sessionID: 6762f0a71f474bf3088653dfb838b412
+[36mcloud-risk-portal      |[0m simulation - sessionID: 71fab47656367fd764529d88e889e67c
+[36mcloud-risk-portal      |[0m simulation - sessionID: 184e2e374d1bbb633fb63522725d877a
+[36mcloud-risk-portal      |[0m simulation - sessionID: 719849515372aaab1fc5ad6c0c6f901f
+[36mcloud-risk-portal      |[0m simulation - sessionID: 8d449b90c50fb1477cf9768cbc3a99a5
+[36mcloud-risk-portal      |[0m simulation - sessionID: 7ffcab2b2f9c5897ec1dca6aa278e125
+[36mcloud-risk-portal      |[0m simulation - sessionID: 86df56d9d34510b741695ed9b5f57c5e
+[36mcloud-risk-portal      |[0m simulation - sessionID: 923bb347cae98cb44a3961ae6e997b1a
+[36mcloud-risk-portal      |[0m simulation - sessionID: 4abc2e123efa20cd028891194b48b408
+[36mcloud-risk-portal      |[0m simulation - sessionID: d5ca88fc1912471ce68881570eae22ed
+[36mcloud-risk-portal      |[0m simulation - sessionID: ab92977c87e79b2bd46c52c5461c83b1
+[36mcloud-risk-portal      |[0m simulation - sessionID: c06bfddf3ca81e7d56de8e64ecb3e4f3
+[36mcloud-risk-portal      |[0m simulation - sessionID: 0a729a96a140e8d613bbf09ba18bef3b
+[36mcloud-risk-portal      |[0m simulation - sessionID: d6fb82fb5c6aa82dfdf790ef5846ae56
+[36mcloud-risk-portal      |[0m simulation - sessionID: 3ed3c372f586ff8e71b12716a1eb6dd1
+[36mcloud-risk-portal      |[0m simulation - sessionID: 1b9f010aae2a483fa16c223b9847e3ab
+[36mcloud-risk-portal      |[0m simulation - sessionID: a9d7ec9cb0e0ecee8dcee0938664a801
+[36mcloud-risk-portal      |[0m simulation - sessionID: c9a26aec7dd0620e2e18e7768ca9898f
+[36mcloud-risk-portal      |[0m simulation - sessionID: 2dd51ead9f6f1d8725abdbcf46b180d3
+[36mcloud-risk-portal      |[0m simulation - sessionID: 755459325050f40c289eae495eed226e
+[36mcloud-risk-portal      |[0m simulation - sessionID: 6e733fc4bf9e1c84ca700f2d7239c4b6
+[36mcloud-risk-portal      |[0m simulation - sessionID: 7fe9168f81c05b112750b9e0e5f0401d
+[36mcloud-risk-portal      |[0m simulation - sessionID: 7e16a85f89615d765aceee9cf33e7cd7
+[36mcloud-risk-portal      |[0m simulation - sessionID: b0921b2921283e05424f783382b4f6ac
+[36mcloud-risk-portal      |[0m simulation - sessionID: 8e7fdfaa05e95804818eb2d719f20954
+[36mcloud-risk-portal      |[0m simulation - sessionID: 3e70a048afdd1bef99d18718737684d1
+[36mcloud-risk-portal      |[0m simulation - sessionID: 1fc48095f79e48da28567d31edce943c
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: c96e4bacc4b414cece56062d94d1eb51
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 209bfac797baa8fab0fa4b10683a1a7b
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m simulation - sessionID: 0140794c67a3176815c9367547a7b37e
+[36mcloud-risk-portal      |[0m simulation - sessionID: 1f89300ae463247f44198455a367a82f
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 9a26ce1574cb97840be14aa75026d5f6
+[36mcloud-risk-portal      |[0m simulation - sessionID: 2edae3958df83bba32c2a62bcc25c715
+[36mcloud-risk-portal      |[0m simulation - sessionID: 0828cdee4878272b9dd30d0d6a79a022
+[36mcloud-risk-portal      |[0m simulation - sessionID: 59695d7a8fe8435ae9a589f2009111bf
+[36mcloud-risk-portal      |[0m simulation - sessionID: 6c15f5b13898461d129002aefd89a4b6
+[36mcloud-risk-portal      |[0m simulation - sessionID: 4aeb403ebb3b4674242d2e4480a4e3dd
+[36mcloud-risk-portal      |[0m simulation - sessionID: 44dbc67b85e103a279fd126f9fcee2c3
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 5247969bc5fa9c85e85472cb25dcd6e4
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: ded5257395484b1016094e94290b6b18
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: ded5257395484b1016094e94290b6b18
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: ded5257395484b1016094e94290b6b18
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 5247969bc5fa9c85e85472cb25dcd6e4
+[36mcloud-risk-portal      |[0m Session_id not found in the database - creating new submission
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: ded5257395484b1016094e94290b6b18
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: ded5257395484b1016094e94290b6b18
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: ded5257395484b1016094e94290b6b18
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: ded5257395484b1016094e94290b6b18
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Invalid vendor: Macrometa
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m simulation - sessionID: 12f37f7ffe3c9d22a0d1cbe414b3a0c0
+[36mcloud-risk-portal      |[0m simulation - sessionID: f9131193fce929a75f68fa4c3e3a4751
+[36mcloud-risk-portal      |[0m Sending reset email to albino.ferreira@hotmail.com with token fbf99fd222897a0625005db66a884ed3
+[36mcloud-risk-portal      |[0m Message sent: <9de372d6-92c4-d8bf-a108-f934dd1fc2d9@cloudriskgraph.com>
+[36mcloud-risk-portal      |[0m Email sent to: albino.ferreira@hotmail.com
+[36mcloud-risk-portal      |[0m Storing reset token in the database
+[36mcloud-risk-portal      |[0m fbf99fd222897a0625005db66a884ed3
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 3e3bb0d476b58b32712f8416209a17f4
+[36mcloud-risk-portal      |[0m save submission - sessionId: 3e3bb0d476b58b32712f8416209a17f4
+[36mcloud-risk-portal      |[0m Session_id not found in the database - creating new submission
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: ef15363fcb844624791264b8429c56a6
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: ef15363fcb844624791264b8429c56a6
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m simulation - sessionID: ce92547b143a1d7f47f27611de6bdee2
+[36mcloud-risk-portal      |[0m simulation - sessionID: 0b9cd8009769dff3c308ff52dc190fc1
+[36mcloud-risk-portal      |[0m simulation - sessionID: 357841b1b1ada19d027f0ae20fb1ff13
+[36mcloud-risk-portal      |[0m simulation - sessionID: befd2f781aaa221d00254da497e80d25
+[36mcloud-risk-portal      |[0m simulation - sessionID: 30c02752536e87f901a4c3aca02a751a
+[36mcloud-risk-portal      |[0m simulation - sessionID: 6571bd5ddbf198e6a3253196ddc80c68
+[36mcloud-risk-portal      |[0m simulation - sessionID: 2b7c6701268638bfac140b62a91d3a7d
+[36mcloud-risk-portal      |[0m simulation - sessionID: 811f89541fd5bfbe6b46e81ac9d3124c
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 32d42b7f4848df6f0b96649f45794210
+[36mcloud-risk-portal      |[0m simulation - sessionID: 702b2c36d863628999bcfe8c0d6578d8
+[36mcloud-risk-portal      |[0m simulation - sessionID: 0b51dc82d22341d0ae8cef0e16bad725
+[36mcloud-risk-portal      |[0m simulation - sessionID: 25263770a641898411436ce072ebbe08
+[36mcloud-risk-portal      |[0m simulation - sessionID: f28ff994f36972c026e5082c20216d50
+[36mcloud-risk-portal      |[0m simulation - sessionID: 6396ca2a8433d30a03ae6cbf791fdb24
+[36mcloud-risk-portal      |[0m simulation - sessionID: 42ad0e9536455d0e283c703713f8af0c
+[36mcloud-risk-portal      |[0m simulation - sessionID: ea706788e0f39187a035ed552fecdd53
+[36mcloud-risk-portal      |[0m simulation - sessionID: 9c0a35fa26688b7ef88a8ab2692ec551
+[36mcloud-risk-portal      |[0m simulation - sessionID: 6f917ab189f21f6b6532e5c6fc6e66a3
+[36mcloud-risk-portal      |[0m simulation - sessionID: 5b953cc12a9cb22e5605d86d74cadc5a
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 13e22ef3e33e036f6b5f7845bc4577d3
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 945e2c9ce02faefee6d5d7f4734fd44b
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 13e22ef3e33e036f6b5f7845bc4577d3
+[36mcloud-risk-portal      |[0m Session_id not found in the database - creating new submission
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 945e2c9ce02faefee6d5d7f4734fd44b
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[32mcustomer_portal_app_1  |[0m 
+[32mcustomer_portal_app_1  |[0m Collecting usage statistics. To deactivate, set browser.gatherUsageStats to false.
+[32mcustomer_portal_app_1  |[0m 
+[32mcustomer_portal_app_1  |[0m 
+[32mcustomer_portal_app_1  |[0m   You can now view your Streamlit app in your browser.
+[32mcustomer_portal_app_1  |[0m 
+[32mcustomer_portal_app_1  |[0m   URL: http://0.0.0.0:8185
+[32mcustomer_portal_app_1  |[0m 
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 945e2c9ce02faefee6d5d7f4734fd44b
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 13e22ef3e33e036f6b5f7845bc4577d3
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 945e2c9ce02faefee6d5d7f4734fd44b
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 13e22ef3e33e036f6b5f7845bc4577d3
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m save submission - sessionId: 13e22ef3e33e036f6b5f7845bc4577d3
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 55a82cc6148b148557a4169455205054
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Invalid service Microsoft Entra ID for vendor Amazon AWS
+[36mcloud-risk-portal      |[0m Invalid service Microsoft Entra ID for vendor Amazon AWS
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 13e22ef3e33e036f6b5f7845bc4577d3
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 55a82cc6148b148557a4169455205054
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Invalid service Microsoft Entra ID for vendor Amazon AWS
+[36mcloud-risk-portal      |[0m Invalid service Microsoft Entra ID for vendor Amazon AWS
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 13e22ef3e33e036f6b5f7845bc4577d3
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 2773882f59323f29ff922386eef20a4a
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 13e22ef3e33e036f6b5f7845bc4577d3
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 2773882f59323f29ff922386eef20a4a
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 13e22ef3e33e036f6b5f7845bc4577d3
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 2773882f59323f29ff922386eef20a4a
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m Upgrade request received for user 5 with customer_type: premium
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: cd072702f165dbe6b4b12cb76ccb53bd
+[36mcloud-risk-portal      |[0m save submission - sessionId: 5c2c86272002d63c5c1cc9a44d9852ab
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m simulation - sessionID: c90e725e8b42b5fc87ea8aed26c6fdcb
+[36mcloud-risk-portal      |[0m simulation - sessionID: 98ad2f4c335d317888b55e3a81f5c10f
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 322c834458b73238f4a195245c201e09
+[36mcloud-risk-portal      |[0m save submission - sessionId: 322c834458b73238f4a195245c201e09
+[36mcloud-risk-portal      |[0m Session_id not found in the database - creating new submission
+[36mcloud-risk-portal      |[0m save submission - sessionId: 322c834458b73238f4a195245c201e09
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 37a55bb84eb2a524ec64222675e09a22
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m simulation - sessionID: b92b255d29b526be618d1dddec82cfb6
+[36mcloud-risk-portal      |[0m simulation - sessionID: 3a68fb79485bb35845dbe1e2f8ee6756
+[36mcloud-risk-portal      |[0m simulation - sessionID: 5ec2b6234f3923592333d845132b1bfb
+[36mcloud-risk-portal      |[0m simulation - sessionID: 7dba6422534af7fe3e733491faafab63
+[36mcloud-risk-portal      |[0m simulation - sessionID: 5857d5911c22a042d2383dba2ee783d7
+[36mcloud-risk-portal      |[0m simulation - sessionID: 6d95c6bd06f45500f4b0af54fd960c72
+[36mcloud-risk-portal      |[0m simulation - sessionID: a337bcfbea6d7b997afe2a2ff7bada7b
+[36mcloud-risk-portal      |[0m simulation - sessionID: 839129aa954bc1d90ccea2f9c940f328
+[36mcloud-risk-portal      |[0m simulation - sessionID: a56d7794800aea9febe319575fd9a57c
+[36mcloud-risk-portal      |[0m simulation - sessionID: b5a210aec28adb37ae7e2b17b36884c0
+[36mcloud-risk-portal      |[0m simulation - sessionID: 94daca2ba65c9b52bc753328956dd777
+[36mcloud-risk-portal      |[0m simulation - sessionID: 2882b6edef99970364c221713dec7f3c
+[36mcloud-risk-portal      |[0m simulation - sessionID: 616ac7d95131e9f6f3e2b51970d22c7e
+[36mcloud-risk-portal      |[0m simulation - sessionID: f85fff32b40786beaee0e2925c40e683
+[36mcloud-risk-portal      |[0m simulation - sessionID: 589e2b418fc095c200fb24cb0fe55000
+[36mcloud-risk-portal      |[0m simulation - sessionID: 955d9e337ec76b264fc33f6aebee0b13
+[36mcloud-risk-portal      |[0m simulation - sessionID: d38b51b25ff623a030c4b5807230060b
+[36mcloud-risk-portal      |[0m simulation - sessionID: 1ddaf9a6a23405052bc76af882f81744
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 194daec50f9c2f3027d65b24ce1dcdaa
+[36mcloud-risk-portal      |[0m save submission - sessionId: 194daec50f9c2f3027d65b24ce1dcdaa
+[36mcloud-risk-portal      |[0m Session_id not found in the database - creating new submission
+[36mcloud-risk-portal      |[0m save submission - sessionId: 194daec50f9c2f3027d65b24ce1dcdaa
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m save submission - sessionId: 194daec50f9c2f3027d65b24ce1dcdaa
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m save submission - sessionId: 194daec50f9c2f3027d65b24ce1dcdaa
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: e309f544fb97e4ae8f8cd933a0482947
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 194daec50f9c2f3027d65b24ce1dcdaa
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: e309f544fb97e4ae8f8cd933a0482947
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 194daec50f9c2f3027d65b24ce1dcdaa
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 6279b9222031bc175878f504abdcb55f
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 222902004861a2880bfa6510e31c4bcf
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 6279b9222031bc175878f504abdcb55f
+[36mcloud-risk-portal      |[0m Session_id not found in the database - creating new submission
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 2307fe7da88faf923c59c421e6d85e4c
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 2307fe7da88faf923c59c421e6d85e4c
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 36fb1159c196b1259868eeef8be24fef
+[36mcloud-risk-portal      |[0m save submission - sessionId: 36fb1159c196b1259868eeef8be24fef
+[36mcloud-risk-portal      |[0m Session_id not found in the database - creating new submission
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 118fca0220b4a1f1e29992f195e2d923
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 36fb1159c196b1259868eeef8be24fef
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 7e36018cbff5d990a839056a5778dd4d
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 7e36018cbff5d990a839056a5778dd4d
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 7e36018cbff5d990a839056a5778dd4d
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 7e36018cbff5d990a839056a5778dd4d
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 7e36018cbff5d990a839056a5778dd4d
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m save submission - sessionId: 36fb1159c196b1259868eeef8be24fef
+[36mcloud-risk-portal      |[0m Session_id found in the database - updating existing submission
+[36mcloud-risk-portal      |[0m Error saving submission: error: column "updated_at" of relation "customer_submissions" does not exist
+[36mcloud-risk-portal      |[0m     at /app/node_modules/pg-pool/index.js:45:11
+[36mcloud-risk-portal      |[0m     at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[36mcloud-risk-portal      |[0m     at async /app/server.js:933:13 {
+[36mcloud-risk-portal      |[0m   length: 145,
+[36mcloud-risk-portal      |[0m   severity: 'ERROR',
+[36mcloud-risk-portal      |[0m   code: '42703',
+[36mcloud-risk-portal      |[0m   detail: undefined,
+[36mcloud-risk-portal      |[0m   hint: undefined,
+[36mcloud-risk-portal      |[0m   position: '90',
+[36mcloud-risk-portal      |[0m   internalPosition: undefined,
+[36mcloud-risk-portal      |[0m   internalQuery: undefined,
+[36mcloud-risk-portal      |[0m   where: undefined,
+[36mcloud-risk-portal      |[0m   schema: undefined,
+[36mcloud-risk-portal      |[0m   table: undefined,
+[36mcloud-risk-portal      |[0m   column: undefined,
+[36mcloud-risk-portal      |[0m   dataType: undefined,
+[36mcloud-risk-portal      |[0m   constraint: undefined,
+[36mcloud-risk-portal      |[0m   file: 'analyze.c',
+[36mcloud-risk-portal      |[0m   line: '2527',
+[36mcloud-risk-portal      |[0m   routine: 'transformUpdateTargetList'
+[36mcloud-risk-portal      |[0m }
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 7e36018cbff5d990a839056a5778dd4d
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 7e36018cbff5d990a839056a5778dd4d
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 7e36018cbff5d990a839056a5778dd4d
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: 7e36018cbff5d990a839056a5778dd4d
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: ef7e44d0ebfd2055f980b51b786a7e88
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m simulation - sessionID: 571d46b84f147abc92c2ee108cea1497
+[36mcloud-risk-portal      |[0m simulation - sessionID: d334f8b92b0c8996d763852550771580
+[36mcloud-risk-portal      |[0m simulation - sessionID: e7f339ce725ef727ae1afe7952dbb73f
+[36mcloud-risk-portal      |[0m simulation - sessionID: 2a63aaece2674c0e2439ab9930c88203
+[36mcloud-risk-portal      |[0m simulation - sessionID: bd8a2cc4b182ef64d686824514bb5f74
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 61f2c22006fe4fb19ea242292c560f32
+[36mcloud-risk-portal      |[0m simulation - sessionID: e36f9aaff9e87ecbf70f130461d27b1b
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 79c3732990842c3615cb52b8101240d0
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 2d350d2f54f3e977e801be8d48367e94
+[36mcloud-risk-portal      |[0m simulation - sessionID: 18df4a49c4cb798eb2ca8610f54761bb
+[36mcloud-risk-portal      |[0m neo4j save - sessionId: db0fd926d056b7a016b04596d8e2dff9
+[36mcloud-risk-portal      |[0m Previous Neo4j data deleted successfully
+[36mcloud-risk-portal      |[0m Neo4j query executed successfully
+[36mcloud-risk-portal      |[0m simulation - sessionID: d14e514745bce940b840508aa344cae8
+[36mcloud-risk-portal      |[0m simulation - sessionID: 9434b256edf3ee7884e12b72e401ee7e
+[36mcloud-risk-portal      |[0m simulation - sessionID: 4c3782c5a1370e1e080775e5a19f5b0c
+[36mcloud-risk-portal      |[0m simulation - sessionID: a4a9a80dae1a728b8a64fc9c0498a0df
+[36mcloud-risk-portal      |[0m simulation - sessionID: 9afe61f7aa3bf0ff52d9d79414c8af14
+[36mcloud-risk-portal      |[0m simulation - sessionID: abb917a36cf291f496f655ae24e8ff22
+[36mcloud-risk-portal      |[0m simulation - sessionID: 5d1c5188a80420e28f933fc5503fa37f
+[36mcloud-risk-portal      |[0m simulation - sessionID: 0af46eeaf513a3345d56fe41742a2874
+[36mcloud-risk-portal      |[0m simulation - sessionID: af1f0ff213d5a3663a71662fe3c003a9
+[36mcloud-risk-portal      |[0m simulation - sessionID: c9a19485c67ce3dbf3222ef01d9e6643
+[36mcloud-risk-portal      |[0m simulation - sessionID: 236f28c19b89c6f41110d2334cbc582d
+[36mcloud-risk-portal      |[0m simulation - sessionID: 8e2ae91edc14a57ee9dbe13d93513564
+[36mcloud-risk-portal      |[0m simulation - sessionID: 887fe00402423906aebce32ada1c75d8
+[36mcloud-risk-portal      |[0m simulation - sessionID: 80819eecf0c3b77043df4fbd3ab8d058
+[36mcloud-risk-portal      |[0m simulation - sessionID: b2c29334481fb17b4a0c9b17bfa5bc66
+[36mcloud-risk-portal      |[0m simulation - sessionID: c28d59dd5c01c52bdd8463dfe1f1b496
+[36mcloud-risk-portal      |[0m simulation - sessionID: 2f5a99b20d16fa525c631e3018c65a95
+[36mcloud-risk-portal      |[0m simulation - sessionID: a4f8d63a6d23a6cfd84f7323b5bcb726
+[36mcloud-risk-portal      |[0m simulation - sessionID: 5183421d46a44e6419125acacc77b2fb
+[36mcloud-risk-portal      |[0m simulation - sessionID: 075a84a451501dfe53541e46954e586b
+[36mcloud-risk-portal      |[0m simulation - sessionID: 8b9854c0d3081501123ffee291ba4177
+[36mcloud-risk-portal      |[0m simulation - sessionID: 1d82095c4eabff18f2c12547666e0055
+[36mcloud-risk-portal      |[0m simulation - sessionID: cbb5696eecb60dd225d719fbff44ab5e
+[36mcloud-risk-portal      |[0m simulation - sessionID: 462e798fe45824d508d1d57e2f441133
+[36mcloud-risk-portal      |[0m simulation - sessionID: 10ae0d8ab09253a6ed8623190b8a709d
+[36mcloud-risk-portal      |[0m simulation - sessionID: 0c1097086cc9f6bf3e98588976c2f6aa
+[36mcloud-risk-portal      |[0m simulation - sessionID: 42fc640409def07ba0de641da2c63b68
+[36mcloud-risk-portal      |[0m simulation - sessionID: 584d190b85cd08c72be30f83a319c3d1
+[36mcloud-risk-portal      |[0m simulation - sessionID: 661ef8f65f7dcb3ba45d2bc8a0c22610
+[36mcloud-risk-portal      |[0m simulation - sessionID: e8d3bff6b68bb08b9535de1d2f37bb43
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: f09d7e42f87e7bff64f1adfe4a23652c
+[36mcloud-risk-portal      |[0m simulation - sessionID: cf1651e368a3658f78940b4454337ec1
+[36mcloud-risk-portal      |[0m simulation - sessionID: fe39e9279c8d8a728c8f2e85b5ce391c
+[36mcloud-risk-portal      |[0m simulation - sessionID: 48c4665d6bd1aacb70f03ff8fbc7afff
+[36mcloud-risk-portal      |[0m simulation - sessionID: 09c236bd7fbb3a4fef7d7e46d8f333de
+[36mcloud-risk-portal      |[0m simulation - sessionID: 6b8b047931f7eaf4c28075910c4bb29c
+[36mcloud-risk-portal      |[0m simulation - sessionID: f9339cd1157dfd1184b3a35e21c71b84
+[36mcloud-risk-portal      |[0m simulation - sessionID: e79278a2034e7148bbb4f0a1eec416cc
+[36mcloud-risk-portal      |[0m simulation - sessionID: 8a100e289f058e9f95dc9d919607e080
+[36mcloud-risk-portal      |[0m simulation - sessionID: 3b6a1dc0a23790fa2c2cc23ebdce0d2a
+[36mcloud-risk-portal      |[0m simulation - sessionID: fe7837db751df865cb87ea1687be444d
+[36mcloud-risk-portal      |[0m simulation - sessionID: ad98b01be6796a43c108a18f90df6c84
+[36mcloud-risk-portal      |[0m simulation - sessionID: 6759e756e959722c9128191136a7f0b2
+[36mcloud-risk-portal      |[0m simulation - sessionID: df5a1fb3e58e8c77797cce3129e3ff69
+[36mcloud-risk-portal      |[0m simulation - sessionID: a86d2ae919328f2478cd07eff1432a22
+[36mcloud-risk-portal      |[0m simulation - sessionID: a38397dfbdb2993d7954e42ad1028843
+[36mcloud-risk-portal      |[0m simulation - sessionID: 2f4539bf60441fcde76d00ee24b06815
+[36mcloud-risk-portal      |[0m simulation - sessionID: e36b9bf9c93e6e102a003d806c235dc1
+[36mcloud-risk-portal      |[0m simulation - sessionID: 46929b49f0ace8f56c532167f9857f16
+[36mcloud-risk-portal      |[0m simulation - sessionID: e6f9327bd26f71f951d18f2939a11580
+[36mcloud-risk-portal      |[0m simulation - sessionID: 47ee8c6e31505ed72ae1f3d6815045ba
+[36mcloud-risk-portal      |[0m simulation - sessionID: 8232cb8252845056fdbf3ef74b3f2b12
+[36mcloud-risk-portal      |[0m simulation - sessionID: 84575b40d5671761a614eb6e14dd172d
+[36mcloud-risk-portal      |[0m simulation - sessionID: 41f7e90a3100481c2a62b94e4425dde1
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 73f995e45244547b317571de9e4952f4
+[36mcloud-risk-portal      |[0m simulation - sessionID: 2a54091a7f6d2de618b17516775d8959
+[36mcloud-risk-portal      |[0m simulation - sessionID: 9e60aded8056281f37e36ea7099ea58c
+[36mcloud-risk-portal      |[0m simulation - sessionID: c7e81834ef7699bcce078cecbd0b937a
+[36mcloud-risk-portal      |[0m simulation - sessionID: 3b825bccc39271d1da6690909b005fa5
+[36mcloud-risk-portal      |[0m simulation - sessionID: 03dfbdc72a6f52bf76f47db97c285867
+[36mcloud-risk-portal      |[0m simulation - sessionID: 651fbdcc935c77f69cf0c488f51a298d
+[36mcloud-risk-portal      |[0m simulation - sessionID: a25ccdb2b06ba4f9052064609c620509
+[36mcloud-risk-portal      |[0m simulation - sessionID: 8ae8a099d280957aad4cf65e846be70a
+[36mcloud-risk-portal      |[0m simulation - sessionID: aa8e41827750a0c9aa8d6eaed853aafd
+[36mcloud-risk-portal      |[0m simulation - sessionID: 8892c946b9dd8a497766ecaba0975b35
+[36mcloud-risk-portal      |[0m simulation - sessionID: e35df80f10e98418162fe3429d11199b
+[36mcloud-risk-portal      |[0m simulation - sessionID: 3d4ce1d3925756cd989ac006f0d0a415
+[36mcloud-risk-portal      |[0m simulation - sessionID: e20644fd484896df4d412a9308a789c5
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 6133e39327179184498b35ccbf251e6a
+[36mcloud-risk-portal      |[0m simulation - sessionID: 1a976b6bd1ed60a9cb698d490e636ab7
+[36mcloud-risk-portal      |[0m simulation - sessionID: 288542da910085b6ce6cad2a7363fafe
+[36mcloud-risk-portal      |[0m simulation - sessionID: 861aa8a962e52299965fa44a32d0d4cd
+[36mcloud-risk-portal      |[0m simulation - sessionID: b648d79e77ab54080987f26850ef3042
+[36mcloud-risk-portal      |[0m simulation - sessionID: afec9a3e28b326b71120ed31d34daf85
+[36mcloud-risk-portal      |[0m simulation - sessionID: 05a6b134f52cbb23f3884dd02ef334af
+[36mcloud-risk-portal      |[0m simulation - sessionID: 00b2443d4e58b3bfc8d06844ff20fd5d
+[36mcloud-risk-portal      |[0m simulation - sessionID: 18afeecbf890ca0d792ea5b5a0cc8a4a
+[36mcloud-risk-portal      |[0m simulation - sessionID: 0ae6564cc7193f4cd5216776d6c925d4
+[36mcloud-risk-portal      |[0m customer-portal - sessionID: 97fd6563d6a0c26c16b797d6c8971700

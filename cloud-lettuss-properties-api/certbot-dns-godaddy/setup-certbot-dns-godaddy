@@ -1,0 +1,12 @@
+docker run --rm \
+  -v letsencrypt:/var/lib/letsencrypt \
+  -v letsencrypt:/etc/letsencrypt \
+  --cap-drop=all \
+  insureyourtechcloud/certbot_local  certbot certonly \
+    --authenticator dns-godaddy \
+    --dns-godaddy-propagation-seconds 900 \
+    --dns-godaddy-credentials /var/lib/letsencrypt/godaddy_credentials.ini \
+    --keep-until-expiring --non-interactive --expand \
+    --server https://acme-v02.api.letsencrypt.org/directory \
+    --agree-tos --email "business@insureyourtech.cloud" \
+    -d api-cloud-risk.insureyourtech.cloud -d '*.insureyourtech.cloud'

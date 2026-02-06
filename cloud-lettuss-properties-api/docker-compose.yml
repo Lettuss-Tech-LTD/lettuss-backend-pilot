@@ -1,0 +1,114 @@
+services:
+  
+  postgres-db:
+    image: postgres:16.4
+    container_name: postgres-db
+    build:
+      context: .
+      dockerfile: postgres.Dockerfile
+    command:
+      [
+        "postgres",
+        "-c",
+        "log_statement=all",
+        "-c",
+        "log_destination=stderr",
+        "-c",
+        "shared_preload_libraries=pg_cron",
+        "-c",
+        "cron.database_name=${POSTGRES_DB-cloud_lettuss_portal}",
+      ]
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: cloud_lettuss_portal
+    ports:
+      - "5432:5432" # Expose DB to port 5432
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./create-cloud-lettuss-db.sql:/docker-entrypoint-initdb.d/create_database.sql
+    networks:
+      - backend
+    restart: unless-stopped
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d $$POSTGRES_DB -U $$POSTGRES_USER" ]
+      interval: 20s
+      timeout: 4s
+      retries: 2
+
+  node-api:
+    build:
+      context: ./node-api
+      dockerfile: node-js.Dockerfile
+    container_name: node-api
+    environment:
+      - DB_HOST=postgres-db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=password
+      - DB_NAME=cloud_lettuss_portal
+      - DB_NAME_PORTAL=cloud_lettuss_portal
+      - PORT=8183
+      - SSL_ENABLED=true
+    ports:
+      - "8183:8183" # Expose API to port 8183
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+    volumes:
+      - ./node-api:/node-api
+      - ./certs:/app/certs:ro
+    working_dir: /app
+    networks:
+      - backend
+    command: "npm start" # You can modify this if you're using a custom start script
+    restart: unless-stopped
+
+  csv-loader:
+    build:
+      context: ./csv-loader
+      dockerfile: csv-loader.Dockerfile
+    container_name: csv-loader
+    environment:
+      - DB_HOST=postgres-db
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=password
+      - DB_NAME=cloud_lettuss_portal
+    volumes:
+      - ./csv-loader:/csv-loader
+      - ./data:/data
+    working_dir: /app
+    depends_on:
+      postgres-db:
+        condition: service_healthy
+    networks:
+      - backend
+    command: >
+      sh -c "node /app/data-loader.js 
+      /data/lettuss_rental_properties.csv rental_properties
+      /data/lettuss_rental_subscriptions.csv rental_subscriptions"
+
+  nginx-proxy:
+    build:
+      context: .
+      dockerfile: nginx-proxy.Dockerfile
+    container_name: nginx-proxy
+    ports:
+      - "443:443"  # Expose HTTPS port
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./certs:/etc/nginx/certs:ro
+      - ../cloud-lettuss-customer-portal/lettuss-portal/public/images:/app/public/images
+    networks:
+      - backend
+    depends_on:
+      - node-api
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+
+networks:
+  backend:
+    driver: bridge

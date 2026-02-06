@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lettuss-portal
+  namespace: lettus
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lettuss-portal
+  template:
+    metadata:
+      labels:
+        app: lettuss-portal
+    spec:
+      containers:
+        - name: lettuss-portal
+          image: lettus/portal:latest
+          ports:
+            - containerPort: 8184
+          env:
+            - name: PORT
+              value: "8184"
+            - name: DATABASE_URL
+              value: postgres://postgres:password@lettus-postgres:5432/cloud_lettuss_portal
+            - name: IS_PROD
+              value: "true"
+            - name: SSL_ENABLED
+              value: "false"
+            - name: DEV_API_BASE_URL
+              value: https://api.lettusslettings.localhost
+            - name: PROD_API_BASE_URL
+              value: https://api.lettusslettings.co.uk
+            - name: DEV_APP_BASE_URL
+              value: https://lettusslettings.localhost
+            - name: PROD_APP_BASE_URL
+              value: https://lettusslettings.co.uk
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lettuss-portal
+  namespace: lettus
+spec:
+  selector:
+    app: lettuss-portal
+  ports:
+    - port: 8184
+      targetPort: 8184

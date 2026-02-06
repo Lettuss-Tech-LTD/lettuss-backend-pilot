@@ -1,0 +1,2 @@
+docker pull miigotu/certbot-dns-godaddy
+docker build -f certbot_local.Dockerfile -t insureyourtechcloud/certbot_local:latest .

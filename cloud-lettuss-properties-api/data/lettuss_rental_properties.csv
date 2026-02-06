@@ -1,0 +1,4 @@
+title,description,property_type,address_line1,city,country,postal_code,bedrooms,bathrooms,monthly_rent,deposit_amount,available_from,status,published_at
+Lettus Riverside Apartment,Two-bedroom apartment with river views,flat,12 Riverside Walk,London,UK,SE1 7PB,2,2,1850.00,1850.00,2026-03-01,available,2026-02-05 10:00:00
+Lettus City Loft,Open-plan loft close to transit,studio,88 King Street,Manchester,UK,M1 2AB,0,1,1200.00,1200.00,2026-03-10,available,2026-02-04 14:30:00
+Lettus Family Home,Three-bedroom home with garden,house,4 Oak Lane,Bristol,UK,BS1 5HT,3,2,2100.00,2100.00,2026-03-15,available,2026-02-03 09:00:00

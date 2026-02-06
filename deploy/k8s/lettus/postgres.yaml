@@ -1,0 +1,80 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: lettus-postgres-init
+  namespace: lettus
+data:
+  create_database.sql: |
+    -- This is intentionally minimal. Load full schema via kubectl create configmap.
+    SELECT 1;
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: lettus-postgres-pvc
+  namespace: lettus
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: lettus-postgres
+  namespace: lettus
+spec:
+  serviceName: lettus-postgres
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lettus-postgres
+  template:
+    metadata:
+      labels:
+        app: lettus-postgres
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:16.4
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: password
+            - name: POSTGRES_DB
+              value: cloud_lettuss_portal
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/postgresql/data
+            - name: init
+              mountPath: /docker-entrypoint-initdb.d
+      volumes:
+        - name: init
+          configMap:
+            name: lettus-postgres-init
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lettus-postgres
+  namespace: lettus
+spec:
+  selector:
+    app: lettus-postgres
+  ports:
+    - port: 5432
+      targetPort: 5432

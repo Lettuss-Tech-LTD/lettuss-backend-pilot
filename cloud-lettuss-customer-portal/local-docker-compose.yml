@@ -1,0 +1,42 @@
+services:
+
+  customer_graph:
+    image: neo4j:5.25.1-community
+    ports:
+      - 17474:7474
+      - 17473:7473
+      - 17687:7687 
+    volumes:
+      - ./neo4j_data:/data
+      - ./neo4j_customer_submission:/var/lib/neo4j/import
+    environment:
+      - NEO4J_AUTH=${NEO4J_USERNAME-neo4j}/${NEO4J_PASSWORD-password}
+    networks:
+      - cloud-lettuss-properties-api_backend # backend
+    restart: unless-stopped
+
+  lettuss-portal:
+    build:
+      context: ./lettuss-portal
+      dockerfile: lettuss-portal.Dockerfile
+    container_name: lettuss-portal
+    environment:
+      - NEO4J_CLIENT_URI=bolt://host.docker.internal:17687
+      - NEO4J_USERNAME=neo4j
+      - NEO4J_PASSWORD=password
+      - PORT=8184
+    ports:
+      - 8184:8184 
+    depends_on:
+      - customer_graph
+    working_dir: /app
+    volumes:
+      - ./lettuss-portal/neo4j_customer_submission:/app/neo4j_customer_submission
+    networks:
+      - cloud-lettuss-properties-api_backend # backend
+    command: "npm start" # You can modify this if you're using a custom start script
+    restart: unless-stopped
+
+networks:
+  cloud-lettuss-properties-api_backend: # backend
+    external: true

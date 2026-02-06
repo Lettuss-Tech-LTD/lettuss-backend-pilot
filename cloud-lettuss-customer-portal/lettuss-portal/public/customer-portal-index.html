@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lettus Lettings - Rental Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        window.ENV = window.ENV || {
+            apiBaseUrl: 'https://api.lettusslettings.localhost',
+            appBaseUrl: 'https://lettusslettings.localhost',
+            isDevelopment: true,
+            companyName: '',
+            userId: '',
+            sessionID: ''
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f6fb;
+            color: #1f2933;
+            margin: 0;
+            padding: 24px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header {
+            background: #111827;
+            color: #f9fafb;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        header h1 {
+            margin: 0 0 6px 0;
+            font-size: 28px;
+        }
+        header p {
+            margin: 0;
+            color: #d1d5db;
+        }
+        .panel {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+        }
+        .panel h2 {
+            margin-top: 0;
+        }
+        .search-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+        input, select, button {
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            font-size: 14px;
+        }
+        button {
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        button.secondary {
+            background: #e5e7eb;
+            color: #1f2933;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+        }
+        .card {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 16px;
+            background: #fff;
+        }
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: #e0f2fe;
+            color: #0369a1;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        .meta {
+            color: #6b7280;
+            font-size: 13px;
+        }
+        .actions {
+            margin-top: 12px;
+            display: flex;
+            gap: 8px;
+        }
+        .empty {
+            color: #6b7280;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Lettus Lettings</h1>
+        <p>Browse published rentals and subscribe to your next home.</p>
+        <p id="userSummary"></p>
+    </header>
+
+    <section class="panel">
+        <h2>Search properties</h2>
+        <form id="searchForm" class="search-grid">
+            <input type="text" id="searchQuery" placeholder="Search by title or city">
+            <input type="text" id="searchCity" placeholder="City">
+            <input type="number" id="minRent" placeholder="Min rent">
+            <input type="number" id="maxRent" placeholder="Max rent">
+            <select id="propertyType">
+                <option value="">All types</option>
+                <option value="studio">Studio</option>
+                <option value="flat">Flat</option>
+                <option value="house">House</option>
+            </select>
+            <button type="submit">Search</button>
+            <button type="button" class="secondary" id="resetSearch">Reset</button>
+        </form>
+        <p class="meta">Listings are ordered by publication date, newest first.</p>
+    </section>
+
+    <section class="panel">
+        <h2>Available properties</h2>
+        <div id="propertyList" class="cards"></div>
+    </section>
+
+    <section class="panel">
+        <h2>My subscriptions</h2>
+        <div id="subscriptionsList" class="cards"></div>
+    </section>
+</div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const userId = params.get('userId') || window.ENV.userId || '';
+    const companyName = params.get('companyName') || window.ENV.companyName || 'Lettus Customer';
+    const apiBaseUrl = window.ENV.apiBaseUrl;
+
+    document.getElementById('userSummary').textContent = `Signed in as ${companyName} (ID: ${userId || 'guest'})`;
+
+    const renderPropertyCard = (property) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <span class="tag">${property.property_type || 'property'}</span>
+            <h3>${property.title}</h3>
+            <p class="meta">${property.address_line1 || ''} ${property.city || ''}</p>
+            <p>${property.description || ''}</p>
+            <p><strong>Rent:</strong> £${Number(property.monthly_rent).toFixed(2)} / month</p>
+            <p class="meta">Published: ${new Date(property.published_at).toLocaleDateString()}</p>
+            <div class="actions">
+                <button data-property-id="${property.id}">Subscribe</button>
+            </div>
+        `;
+        card.querySelector('button').addEventListener('click', () => subscribeToProperty(property.id));
+        return card;
+    };
+
+    const renderSubscriptionCard = (subscription) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        const scoreLine = subscription.score_value !== null && subscription.score_value !== undefined
+            ? `<p><strong>Tenancy score:</strong> ${Number(subscription.score_value).toFixed(2)} ${subscription.score_band ? `(${subscription.score_band})` : ''}</p>`
+            : '<p class="meta">Tenancy score pending</p>';
+        card.innerHTML = `
+            <span class="tag">${subscription.status}</span>
+            <h3>${subscription.title}</h3>
+            <p class="meta">${subscription.city}</p>
+            <p><strong>Rent:</strong> £${Number(subscription.monthly_rent).toFixed(2)} / month</p>
+            <p class="meta">Started: ${new Date(subscription.start_date).toLocaleDateString()}</p>
+            ${scoreLine}
+        `;
+        return card;
+    };
+
+    const loadProperties = async (filters = {}) => {
+        const query = new URLSearchParams({ status: 'available', ...filters }).toString();
+        const response = await fetch(`${apiBaseUrl}/lettus/properties?${query}`);
+        const data = await response.json();
+        const container = document.getElementById('propertyList');
+        container.innerHTML = '';
+        if (!data.length) {
+            container.innerHTML = '<p class="empty">No properties found.</p>';
+            return;
+        }
+        data.forEach(property => container.appendChild(renderPropertyCard(property)));
+    };
+
+    const loadSubscriptions = async () => {
+        if (!userId) {
+            document.getElementById('subscriptionsList').innerHTML = '<p class="empty">Sign in to view subscriptions.</p>';
+            return;
+        }
+        const response = await fetch(`${apiBaseUrl}/lettus/subscriptions/tenant/${userId}`);
+        const data = await response.json();
+        const container = document.getElementById('subscriptionsList');
+        container.innerHTML = '';
+        if (!data.length) {
+            container.innerHTML = '<p class="empty">No subscriptions yet.</p>';
+            return;
+        }
+        data.forEach(subscription => container.appendChild(renderSubscriptionCard(subscription)));
+    };
+
+    const subscribeToProperty = async (propertyId) => {
+        if (!userId) {
+            alert('Please sign in to subscribe.');
+            return;
+        }
+        const response = await fetch(`${apiBaseUrl}/lettus/subscriptions`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ property_id: propertyId, tenant_id: userId })
+        });
+        if (!response.ok) {
+            alert('Could not subscribe. Please try again.');
+            return;
+        }
+        await loadSubscriptions();
+        alert('Subscription created.');
+    };
+
+    document.getElementById('searchForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        loadProperties({
+            q: document.getElementById('searchQuery').value,
+            city: document.getElementById('searchCity').value,
+            minRent: document.getElementById('minRent').value,
+            maxRent: document.getElementById('maxRent').value,
+            propertyType: document.getElementById('propertyType').value
+        });
+    });
+
+    document.getElementById('resetSearch').addEventListener('click', () => {
+        document.getElementById('searchForm').reset();
+        loadProperties();
+    });
+
+    loadProperties();
+    loadSubscriptions();
+</script>
+</body>
+</html>

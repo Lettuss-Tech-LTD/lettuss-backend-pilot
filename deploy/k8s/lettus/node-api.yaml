@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lettus-node-api
+  namespace: lettus
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lettus-node-api
+  template:
+    metadata:
+      labels:
+        app: lettus-node-api
+    spec:
+      containers:
+        - name: node-api
+          image: lettus/node-api:latest
+          ports:
+            - containerPort: 8183
+          env:
+            - name: PORT
+              value: "8183"
+            - name: DB_HOST
+              value: lettus-postgres
+            - name: DB_PORT
+              value: "5432"
+            - name: DB_USER
+              value: postgres
+            - name: DB_PASSWORD
+              value: password
+            - name: DB_NAME
+              value: cloud_lettuss_properties_catalogue
+            - name: DB_NAME_PORTAL
+              value: cloud_lettuss_portal
+            - name: IS_PROD
+              value: "true"
+            - name: SSL_ENABLED
+              value: "false"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lettus-node-api
+  namespace: lettus
+spec:
+  selector:
+    app: lettus-node-api
+  ports:
+    - port: 8183
+      targetPort: 8183
