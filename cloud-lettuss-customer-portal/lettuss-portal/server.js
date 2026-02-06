@@ -131,123 +131,78 @@ const initNeo4jConnection = async () => {
 };
 
 function generateCypherQuery(data) {
-    // Default values for metrics if they're undefined
-    const defaultMetrics = {
-        sla_usage: '0',
-        sla_deviation: '0',
-        traffic_coef: '0',
-        usage_connected_risk: '0',
-        service_sla_tier1: '0',
-        annual_downtime_minutes: '0',
-        service_credit_back_tier1: '0'
-    };
-
-    const defaultCustomerMedian = {
-        sla_usage: '0',
-        sla_deviation: '0',
-        traffic_coef: '0',
-        usage_connected_risk: '0',
-        service_sla_tier1: '0',
-        annual_downtime_minutes: '0'
-    };
-
-    // Ensure data structure exists with defaults
-    const { 
-        companyName = 'Unknown Company', 
-        projectName = 'Unknown Project', 
-        services = [], 
-        metrics = {
-            customerMedian: defaultCustomerMedian,
-            vendorMedians: {}
-        } 
+    const {
+        companyName = 'Unknown Company',
+        userId = 'unknown',
+        sessionId = data.sessionID || 'unknown',
+        apiUsage = data.apiUsage || data.api_usage || data.requests || [],
+        behaviorEvents = data.behaviorEvents || data.behavior || data.events || []
     } = data;
 
     let cypher = '';
-    const processedVendors = new Set();
-    const processedServices = new Set();
+    const processedApiEvents = new Set();
+    const processedBehaviorEvents = new Set();
 
-    // Sanitize company name for Cypher
-    const companyId = companyName.replace(/[^a-zA-Z0-9]/g, '_');
+    const companyId = String(companyName).replace(/[^a-zA-Z0-9]/g, '_');
+    const sanitizedSessionId = String(sessionId).replace(/[^a-zA-Z0-9]/g, '_');
 
-    // Create customer node with all metrics, using defaults if undefined
     cypher += `
-CREATE (cust_sessionid__name_${companyId}:CUSTOMER_NAME {
-    name: '${companyName}',
-    project_name: '${projectName}',
-    median_sla_usage_percentage: '${metrics.customerMedian?.sla_usage || defaultCustomerMedian.sla_usage}%',
-    median_sla_deviation_risk: '${metrics.customerMedian?.sla_deviation || defaultCustomerMedian.sla_deviation}',
-    median_traffic_coefficient: '${metrics.customerMedian?.traffic_coef || defaultCustomerMedian.traffic_coef}%',
-    median_usage_risk: '${metrics.customerMedian?.usage_connected_risk || defaultCustomerMedian.usage_connected_risk}',
-    median_service_sla: '${metrics.customerMedian?.service_sla_tier1 || defaultCustomerMedian.service_sla_tier1}%',
-    median_annual_downtime_minutes: '${metrics.customerMedian?.annual_downtime_minutes || defaultCustomerMedian.annual_downtime_minutes}',
-    submission_date: '${new Date().toISOString()}'
+CREATE (cust_sessionid__name_${companyId}:CUSTOMER_PORTAL_SESSION {
+    company_name: '${companyName}',
+    user_id: '${userId}',
+    session_id: '${sanitizedSessionId}',
+    source: 'customer-portal',
+    recorded_at: '${new Date().toISOString()}'
 })`;
 
-    // Add vendor and service nodes with complete metrics
-    services.forEach(service => {
-        if (!service) return; // Skip if service is undefined
-
-        // Ensure service has all required properties with defaults
-        const safeService = {
-            vendor: service.vendor || 'Unknown Vendor',
-            name: service.name || 'Unknown Service',
-            region: service.region || 'global',
-            monthlyCost: service.monthlyCost || 0,
-            metrics: { ...defaultMetrics, ...(service.metrics || {}) }
+    apiUsage.forEach((event, index) => {
+        if (!event) return;
+        const safeEvent = {
+            endpoint: event.endpoint || event.path || event.route || 'unknown',
+            method: event.method || 'GET',
+            status: event.status || event.statusCode || 0,
+            duration_ms: event.duration_ms || event.durationMs || 0,
+            request_size: event.request_size || event.requestSize || 0,
+            response_size: event.response_size || event.responseSize || 0,
+            timestamp: event.timestamp || event.at || new Date().toISOString()
         };
-
-        const serviceId = safeService.name.replace(/[^a-zA-Z0-9]/g, '_');
-        const vendorId = safeService.vendor.replace(/[^a-zA-Z0-9]/g, '_');
-
-        // Ensure vendor medians exist with defaults
-        const vendorMedians = metrics.vendorMedians[safeService.vendor] || defaultCustomerMedian;
-
-        // Only create vendor node if not already processed
-        if (!processedVendors.has(vendorId)) {
-            processedVendors.add(vendorId);
-            cypher += `
-CREATE (${vendorId}:TECHNOLOGY_PROVIDER {
-    name: '${safeService.vendor}',
-    median_sla_usage_percentage: '${vendorMedians.sla_usage || defaultCustomerMedian.sla_usage}%',
-    median_sla_deviation_risk: '${vendorMedians.sla_deviation || defaultCustomerMedian.sla_deviation}',
-    median_traffic_coefficient: '${vendorMedians.traffic_coef || defaultCustomerMedian.traffic_coef}%',
-    median_usage_risk: '${vendorMedians.usage_connected_risk || defaultCustomerMedian.usage_connected_risk}',
-    median_service_sla: '${vendorMedians.service_sla_tier1 || defaultCustomerMedian.service_sla_tier1}%',
-    median_annual_downtime_minutes: '${vendorMedians.annual_downtime_minutes || defaultCustomerMedian.annual_downtime_minutes}'
-})`;
-        }
-
-        // Only create service node if not already processed
-        if (!processedServices.has(serviceId)) {
-            processedServices.add(serviceId);
-            cypher += `
-CREATE (${serviceId}:TECHNOLOGY_SERVICE {
-    name: '${safeService.name}',
-    region: '${safeService.region}',
-    monthly_cost: ${safeService.monthlyCost},
-    sla_usage: '${safeService.metrics.sla_usage}%',
-    sla_deviation_risk: '${safeService.metrics.sla_deviation}',
-    traffic_coefficient: '${safeService.metrics.traffic_coef}%',
-    usage_risk: '${safeService.metrics.usage_connected_risk}',
-    annual_downtime_minutes: '${safeService.metrics.annual_downtime_minutes}',
-    service_sla_tier1: '${safeService.metrics.service_sla_tier1}%',
-    service_credit_back_tier1: '${safeService.metrics.service_credit_back_tier1}%'
-})`;
-        }
-
-        // Create relationships
+        const eventId = `${sanitizedSessionId}_api_${index}`;
+        if (processedApiEvents.has(eventId)) return;
+        processedApiEvents.add(eventId);
         cypher += `
-CREATE (cust_sessionid__name_${companyId})-[:CUSTOMER_USES_SERVICE {
-    monthly_cost: ${safeService.monthlyCost},
-    region: '${safeService.region}'
-}]->(${serviceId})
+CREATE (${eventId}:API_USAGE_EVENT {
+    endpoint: '${safeEvent.endpoint}',
+    method: '${safeEvent.method}',
+    status: ${Number(safeEvent.status)},
+    duration_ms: ${Number(safeEvent.duration_ms)},
+    request_size: ${Number(safeEvent.request_size)},
+    response_size: ${Number(safeEvent.response_size)},
+    timestamp: '${safeEvent.timestamp}'
+})
+CREATE (cust_sessionid__name_${companyId})-[:MADE_API_CALL]->(${eventId})`;
+    });
 
-CREATE (${vendorId})-[:CONNECTED_RISK {
-    sla_usage: '${safeService.metrics.sla_usage}%',
-    sla_deviation_risk: '${safeService.metrics.sla_deviation}',
-    traffic_coefficient: '${safeService.metrics.traffic_coef}%',
-    usage_risk: '${safeService.metrics.usage_connected_risk}'
-}]->(${serviceId})`;
+    behaviorEvents.forEach((event, index) => {
+        if (!event) return;
+        const safeEvent = {
+            type: event.type || event.action || 'unknown',
+            page: event.page || event.screen || 'unknown',
+            label: event.label || '',
+            value: event.value || '',
+            timestamp: event.timestamp || event.at || new Date().toISOString()
+        };
+        const eventId = `${sanitizedSessionId}_behavior_${index}`;
+        if (processedBehaviorEvents.has(eventId)) return;
+        processedBehaviorEvents.add(eventId);
+        cypher += `
+CREATE (${eventId}:BEHAVIOR_EVENT {
+    type: '${safeEvent.type}',
+    page: '${safeEvent.page}',
+    label: '${safeEvent.label}',
+    value: '${safeEvent.value}',
+    timestamp: '${safeEvent.timestamp}'
+})
+CREATE (cust_sessionid__name_${companyId})-[:PERFORMED_ACTION]->(${eventId})`;
     });
 
     return cypher;
@@ -261,8 +216,9 @@ async function deletePreviousNeo4jData(sessionId) {
         try {
             const sanitizedSessionId = sessionId.replace(/[^a-zA-Z0-9]/g, '_');
             const deleteQuery = `
-                MATCH (c:CUSTOMER_NAME {session_id: '${sanitizedSessionId}'})-[r:CUSTOMER_USES_SERVICE]->(s:TECHNOLOGY_SERVICE)
-                DETACH DELETE c, r, s
+                MATCH (c:CUSTOMER_PORTAL_SESSION {session_id: '${sanitizedSessionId}'})
+                OPTIONAL MATCH (c)-[:MADE_API_CALL|PERFORMED_ACTION]->(e)
+                DETACH DELETE c, e
             `;
             await session.run(deleteQuery);
             console.log('Previous Neo4j data deleted successfully');
@@ -290,7 +246,7 @@ function saveNeo4jQuery(data, sessionId) {
     }
 
     // Generate Cypher query
-    let cypher = generateCypherQuery(data);
+    let cypher = generateCypherQuery({ ...data, sessionId });
 
     // Add sanitized session ID to customer node
     cypher = cypher.replace(/CREATE \(cust_sessionid__/g, `CREATE (cust_sessionid_${sanitizedSessionId}_`);
@@ -314,7 +270,7 @@ app.post('/customer-portal/api/save-neo4j-query', async (req, res) => {
         // Execute the new query
         const driver = await initNeo4jConnection();
         if (driver) {
-            const cypher = generateCypherQuery(req.body);
+            const cypher = generateCypherQuery({ ...req.body, sessionId });
             const session = driver.session();
             try {
                 await session.run(cypher);
