@@ -46,10 +46,10 @@ CREATE TABLE cloud_lettuss_portal.customers (
 
 -- Create a new table for the customer_submissions
 INSERT INTO cloud_lettuss_portal.customers (username, email, customername, company, country, password, customer_type)
- VALUES ('business@insureyourtech.cloud', 'business@insureyourtech.cloud', 'InsureYourTech.Cloud - Simulation Company', 'InsureYourTech.Cloud - Simulation Company', 'UK', '$2b$10$BiqmYf6pgbgS2bVGbBHWsO8t3w5upTVHhDclmMFQoIIbaUyggAfHW', 'freemium');
+ VALUES ('jpacerqueira@gmail.com', 'jpacerqueira@gmail.com', 'Joao P. A. Cerqueira', 'JOAO P. A. CERQUEIRA - Simulation Company', 'UK', '$2b$10$BiqmYf6pgbgS2bVGbBHWsO8t3w5upTVHhDclmMFQoIIbaUyggAfHW', 'freemium');
 -- password: testpassword = $2b$10$LvZ3aQVe3WSROOdJ3faG7ehi4lez9WwmLIwZnNgjqitiJqZGaRyuS
 INSERT INTO cloud_lettuss_portal.customers (username, email, customername, company, country, password, customer_type)
- VALUES ('joao@fuelbigdata.com', 'joao@fuelbigdata.com', 'Joao P. A. Cerqueira', 'Fuel Data Science Big Data Limited', 'UK', '$2b$10$BiqmYf6pgbgS2bVGbBHWsO8t3w5upTVHhDclmMFQoIIbaUyggAfHW', 'premium');
+ VALUES ('joao@fuelbigdata.com', 'joao@fuelbigdata.com', 'Joao P. A. Cerqueira', 'JOAO P. A. CERQUEIRA - Fuel Data Science Big Data Limited', 'UK', '$2b$10$BiqmYf6pgbgS2bVGbBHWsO8t3w5upTVHhDclmMFQoIIbaUyggAfHW', 'premium');
 -- password: testpassword = $2b$10$LvZ3aQVe3WSROOdJ3faG7ehi4lez9WwmLIwZnNgjqitiJqZGaRyuS
 
 SELECT * FROM cloud_lettuss_portal.customers;

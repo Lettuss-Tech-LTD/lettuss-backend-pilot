@@ -646,9 +646,9 @@ async function sendResetEmail(email, token) {
 
     // Email content
     const mailOptions = {
-        from: '"CloudRiskGraph.com" <no-reply@CloudRiskGraph.com>', // sender address
+        from: '"Lettus Lettings" <no-reply@LettusLettings.com>', // sender address
         to: email, // list of receivers
-        subject: `CloudRiskGraph.com - Password Reset Request - InsureYourTech.Cloud -  ${email}`, // Subject line
+        subject: `Lettus Lettings - Password Reset Request - Lettus Lettings -  ${email}`, // Subject line
         text: `You requested a password reset. Click the link, valid 1h, to reset your password: ${resetUrl}`, // plain text body
         html: `<p>You requested a password reset. Click the link, valid 1h, to reset your password:</p><p><a href="${resetUrl}">Reset Password</a></p>` // html body
     };
@@ -671,7 +671,7 @@ async function sendResetEmail(email, token) {
 }
 
 async function storeResetToken(email, token) {
-    const expiresAt = new Date(Date.now() + 3600000); // Token expires in 1 hour
+    const expiresAt = new Date(Date.now() + 86400000); // Token expires in 24 hours
     try {
         await pool.query(
             'INSERT INTO cloud_lettuss_portal.password_tokens (email, token, expires_at) VALUES ($1, $2, $3)',
