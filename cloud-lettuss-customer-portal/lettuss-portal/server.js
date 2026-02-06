@@ -537,7 +537,10 @@ app.get('/customer-portal/reset-password', async (req, res) => {
 });
 
 app.post('/customer-portal/reset-password', async (req, res) => {
-    const { email } = req.body;
+    const { email } = req.body || {};
+    if (!email) {
+        return res.status(400).send('Email is required.');
+    }
     try {
         const result = await pool.query('SELECT * FROM cloud_lettuss_portal.customers WHERE username = $1 AND email = $1', [email]);
         const user = result.rows[0];
@@ -586,9 +589,19 @@ async function sendResetEmail(email, token) {
         refresh_token: process.env.REFRESH_TOKEN
     });
 
-    const accessToken = oauth2Client.getAccessToken();
+    let accessToken;
+    try {
+        const tokenResponse = await oauth2Client.getAccessToken();
+        accessToken = tokenResponse?.token || tokenResponse;
+        if (!accessToken) {
+            throw new Error('Failed to obtain OAuth access token');
+        }
+    } catch (error) {
+        console.error('Error getting OAuth access token:', error);
+        throw error;
+    }
 
-    let transporter = nodemailer.createTransport({
+    const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             type: 'OAuth2',
@@ -610,20 +623,13 @@ async function sendResetEmail(email, token) {
     };
 
     // Send mail with defined transport object
-    try {
-        let info = await transporter.sendMail(mailOptions);
-        console.log('Message sent: %s', info.messageId);
-    } catch (error) {
-        console.error('Error sending email:', error);
-    }
+    const info = await transporter.sendMail(mailOptions);
+    console.log('Message sent: %s', info.messageId);
     console.log('Email sent to:', email);
+
     // Store the reset token in the database
     console.log('Storing reset token in the database');
-    try {
-        await storeResetToken(email, token);
-    } catch (error) {
-        console.error('Error storing reset token:', error);
-    }
+    await storeResetToken(email, token);
 }
 
 async function storeResetToken(email, token) {
