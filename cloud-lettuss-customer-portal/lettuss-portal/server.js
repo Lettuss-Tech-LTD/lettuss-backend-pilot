@@ -40,166 +40,6 @@ var options = {
 const isProd = process.env.IS_PROD === "true";
 const isSSLDBypass = process.env.SSL_DB_BYPASS === "true" ? false : true;
 
-// Cloud Providers List (optionsForVariable1)
-const cloudProviders = [
-    "Amazon AWS", 
-    "Google Cloud GCP", 
-    "Microsoft Azure", 
-    "IBM Cloud", 
-    "Oracle Cloud OCI", 
-    "Snowflake", 
-    "Databricks", 
-    "Salesforce", 
-    "MongoDB", 
-    "Cloudflare", 
-    "Akamai"
-]
-
- // Cloud Services List
- const cloudServices = {
-    "Amazon AWS": ["Amazon API Gateway","Amazon AWS Direct Connect","Amazon SageMaker","Amazon Bedrock","Amazon CloudFront","Amazon Route 53","Amazon CloudWatch","Amazon CodeGuru Profiler","Amazon Kinesis","Amazon DataZone",
-        "Amazon DocumentDB","Amazon DynamoDB","Amazon AWS RDS","Amazon AWS Aurora Serverles","Amazon EC2 Instance Connect","Amazon Elastic Compute Cloud","Amazon Elastic Container Service",
-        "Amazon Elastic File System","Amazon ElastiCache","Amazon Elastic Block Store","Amazon Elastic Load Balancing","Amazon Elastic MapReduce","Amazon ElastiCache",
-        "Amazon EMR Serverless","Amazon FinSpace","Amazon QuickSight","Amazon AWS Lambda","Amazon AWS CloudFront",
-        "Amazon AWS Step Functions","Amazon Redshift","Amazon AWS Glue","Amazon Simple Queue Service SQS","Amazon s3","Amazon Elastic Kubernetes Service (EKS)"],
-    "Google Cloud GCP": ["Google Cloud VertexAI","Google Cloud Machine Learning","Google Cloud Apigee","Google Cloud Run","Google Cloud Functions","Google Cloud BigQuery","AlloyDB for PostgreSQL","Google Cloud SQL",
-        "Google Cloud Bigtable","Google Cloud Compute Engine","Google Cloud Dataproc","Google Cloud Dataflow","Google Cloud DataStudio","Google Cloud Datalab","Google Cloud Composer","Google Cloud Looker Studio Pro","Google Cloud reCAPTCHA Enterprise","Google Cloud Storage","Google Drive","Google Cloud Pub/Sub","Google SecOps (Chronicle Security)","Recommendation AI",
-        "Google Cloud Marketplace","Google Cloud Load Balancing","Google Cloud And Media CDN","Google Cloud DNS","Google Kubernetes Engine (GKE)"],
-    "Microsoft Azure": ["Azure Active Directory","Microsoft Entra ID","Azure Active Directory B2C",
-        "Azure Machine Learning","Azure AI","Azure AI Search","Azure OpenAI Service","Azure API Management","Azure Databricks","Azure HDInsight",
-        "Azure SQL Managed Instance","Azure SQL Database","Azure Cosmos DB","Azure Database for PostgreSQL","Azure Database for MySQL",
-        "Azure Virtual Machines","Azure Batch","Azure App Service","Azure Logic Apps","Azure Functions","Azure PowerBI","Power BI Embedded","Azure CDN","Azure Storage Accounts","Azure Kubernetes Service (AKS)"],
-    "IBM Cloud": ["IBM Watson Platform","IBM Dedicated Storage Instance","IBM Data Engine (previously SQL Query)","IBM Data Product Hub",
-        "IBM Databases","IBM Databases for DataStax","IBM Databases for EDB",
-        "IBM Databases for Elasticsearch","IBM Databases for etcd","IBM Databases for MongoDB",
-        "IBM Databases for MySQL","IBM Databases for PostgreSQL","IBM Databases for Redis",
-        "IBM DataStage","IBM Db2","IBM Db2 Warehouse","IBM watsonx BI Assistant",
-        "IBM Managed Dedicated Storage Instance","IBM Functions","IBM Cloud Object Storage","IBM Cloud Console","IBM Load Balancers","IBM Cloud IDE","IBM Kubernetes",
-        "Red Hat OpenShift on IBM Cloud"],
-    "Oracle Cloud OCI": ["Oracle Cloud Infrastructure Virtual Cloud Network (VCN)","Oracle Cloud Infrastructure API Gateway","Oracle Cloud Infrastructure Compute","Oracle AutonomousDB 21c","Oracle Database","Object Storage OCI","Oracle Visual Builder","Oracle Identity Cloud","Oracle Integration","Oracle OCI Monitoring","Oracle OCI Networking","Oracle Big Data Service","Oracle Kubernetes Service (OKE)"],
-    "Snowflake": ["Snowflake on AWS","Snowflake on Azure","Snowflake on GCP"],
-    "Databricks": ["Databricks SaaS","Databricks Workspace", "Databricks Mlflow", "Databricks Notebooks"],
-    "Salesforce": ["Salesforce SaaS","Salesforce Sales Cloud", "Salesforce Service Cloud", "Salesforce Marketing Cloud","Salesforce Mulesoft Anypoint Platform"],
-    "MongoDB": [ "MongoDB Atlas","MongoDB Atlas AWS","MongoDB Atlas Azure","MongoDB Atlas GCP","MongoDB Atlas Search","MongoDB Atlas Vector Search","MongoDB Atlas Stream Processing","MongoDB Atlas BI Connector","MongoDB Atlas SQL"],
-    "Cloudflare": ["AnyCast CloudFlare","CDN CloudFlare", "Cloudflare DNS", "Cloudflare DDoS Protection"],
-    "Akamai": ["CDN Akamai", "Edge Computing Akamai", "Security Akamai"],
-    "Macrometa": ["CDN Macrometa", "Edge Computing Macrometa"]
-}
-
-// Cloud Regions List by Provider
-const cloudRegions = {
-    "global": ["global"],
-    "Amazon AWS": [
-        "us-east-1", "us-east-2", "us-west-1", "us-west-2",
-        "eu-west-1", "eu-west-2", "eu-west-3", "eu-central-1", "eu-south-1", "eu-north-1",
-        "ap-northeast-1", "ap-northeast-2", "ap-northeast-3", "ap-southeast-1", "ap-southeast-2", "ap-southeast-3", "ap-southeast-4",
-        "ap-south-1", "ap-east-1",
-        "sa-east-1",
-        "ca-central-1",
-        "me-south-1",
-        "af-south-1"
-    ],
-    "Google Cloud GCP": [
-        "us-central1", "us-east1", "us-east4", "us-west1", "us-west2", "us-west3", "us-west4",
-        "europe-west1", "europe-west2", "europe-west3", "europe-west4", "europe-west6", "europe-north1",
-        "asia-east1", "asia-east2", "asia-northeast1", "asia-northeast2", "asia-northeast3",
-        "asia-southeast1", "asia-southeast2", "asia-south1", "asia-south2",
-        "australia-southeast1", "australia-southeast2",
-        "southamerica-east1", "southamerica-west1",
-        "northamerica-northeast1", "northamerica-northeast2"
-    ],
-    "Microsoft Azure": [
-        "eastus", "eastus2", "centralus", "northcentralus", "southcentralus", "westus", "westus2", "westus3",
-        "westeurope", "northeurope", "uksouth", "ukwest", "francecentral", "francesouth",
-        "germanynorth", "germanywestcentral", "switzerlandnorth", "switzerlandwest", "norwayeast", "norwaywest",
-        "eastasia", "southeastasia", "japaneast", "japanwest", "australiaeast", "australiasoutheast",
-        "centralindia", "southindia", "westindia",
-        "brazilsouth", "brazilsoutheast",
-        "canadacentral", "canadaeast",
-        "southafricanorth", "southafricawest",
-        "uaenorth", "uaecentral"
-    ],
-    "IBM Cloud": [
-        "us-south", "us-east", "us-north", "us-west",
-        "eu-gb", "eu-de", "eu-fr2",
-        "au-syd",
-        "jp-tok", "jp-osa",
-        "ca-tor",
-        "br-sao"
-    ],
-    "Oracle Cloud OCI": [
-        "us-ashburn-1", "us-phoenix-1", "us-sanjose-1",
-        "eu-frankfurt-1", "eu-zurich-1", "eu-amsterdam-1", "uk-london-1",
-        "ap-tokyo-1", "ap-seoul-1", "ap-chuncheon-1", "ap-singapore-1", "ap-mumbai-1", "ap-hyderabad-1",
-        "me-jeddah-1", "me-dubai-1",
-        "sa-saopaulo-1", "sa-vinhedo-1",
-        "ca-montreal-1", "ca-toronto-1",
-        "af-johannesburg-1"
-    ],
-    "Other": ["global-network"] // For Akamai, Cloudflare, etc.
-};
-
-// Flatten regions for backward compatibility if needed
-const allCloudRegions = ["global", ...new Set(Object.values(cloudRegions).flat())];
-
-// Create optionsForVariable2 dynamically from cloudServices
-const optionsForVariable2 = [];
-cloudProviders.forEach(provider => {
-    if (cloudServices[provider]) {
-        cloudServices[provider].forEach(service => {
-            if (!optionsForVariable2.includes(service)) {
-                optionsForVariable2.push(service);
-            }
-        });
-    }
-});
-
-// Create optionsForVariable3 dynamically from cloudRegions
-const optionsForVariable3 = [];
-cloudProviders.forEach(provider => {
-    if (cloudRegions[provider]) {
-        cloudRegions[provider].forEach(region => {
-            if (!optionsForVariable3.includes(region)) {
-                optionsForVariable3.push(region);
-            }
-        });
-    }
-});
-
-// TODO add this to the customer-portal-index.html and simulation-index.html pages
-function updateOptionsForProvider(vendorSelect, serviceSelect, regionSelect) {
-    const selectedVendor = vendorSelect.value;
-    
-    // Update services
-    serviceSelect.innerHTML = '<option value="">Select a Service</option>';
-    if (selectedVendor && cloudServices[selectedVendor]) {
-        cloudServices[selectedVendor].forEach(service => {
-            const option = document.createElement('option');
-            option.value = service;
-            option.textContent = service;
-            serviceSelect.appendChild(option);
-        });
-    }
-    
-    // Update regions
-    regionSelect.innerHTML = '<option value="">Select a Region</option>';
-    if (selectedVendor && cloudRegions[selectedVendor]) {
-        // Always add global option first
-        const globalOption = document.createElement('option');
-        globalOption.value = 'global';
-        globalOption.textContent = 'global';
-        regionSelect.appendChild(globalOption);
-        
-        // Add provider-specific regions
-        cloudRegions[selectedVendor].forEach(region => {
-            const option = document.createElement('option');
-            option.value = region;
-            option.textContent = region;
-            regionSelect.appendChild(option);
-        });
-    }
-}
-
 // Middleware
 app.use(express.json());
 app.use(express.static('public'));
@@ -355,18 +195,6 @@ CREATE (cust_sessionid__name_${companyId}:CUSTOMER_NAME {
             monthlyCost: service.monthlyCost || 0,
             metrics: { ...defaultMetrics, ...(service.metrics || {}) }
         };
-
-        // Validate that the vendor exists in cloudProviders
-        if (!cloudProviders.includes(safeService.vendor)) {
-            console.warn(`Invalid vendor: ${safeService.vendor}`);
-            return;
-        }
-
-        // Validate that the service exists in cloudServices for this vendor
-        if (!cloudServices[safeService.vendor]?.includes(safeService.name)) {
-            console.warn(`Invalid service ${safeService.name} for vendor ${safeService.vendor}`);
-            return;
-        }
 
         const serviceId = safeService.name.replace(/[^a-zA-Z0-9]/g, '_');
         const vendorId = safeService.vendor.replace(/[^a-zA-Z0-9]/g, '_');
@@ -555,18 +383,6 @@ app.get('/simulation/', (req, res) => {
 });
 
 // Routes
-
-// Add new endpoint to serve options
-app.get('/customer-portal/api/options', (req, res) => {
-    res.json({
-        cloudProviders,
-        cloudServices,
-        cloudRegions,
-        optionsForVariable1: cloudProviders,
-        optionsForVariable2: cloudServices,
-        optionsForVariable3: cloudRegions
-    });
-});
 
 // PostgreSQL connection
 const pool = new Pool({
