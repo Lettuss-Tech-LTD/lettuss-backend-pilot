@@ -3,5 +3,9 @@
 **.DS_Store
 
 /cloud-lettuss-customer-portal/neo4j_data/* .ignore # Neo4j data directory
+/cloud-lettuss-customer-portal/neo4j_data/databases/**
+/cloud-lettuss-customer-portal/neo4j_data/dbms/**
+/cloud-lettuss-customer-portal/neo4j_data/server_id**
+/cloud-lettuss-customer-portal/neo4j_data/transactions/**
 /cloud-lettuss-customer-portal/neo4j_customer_submission/* .ignore # Neo4j customer submission directory
 /cloud-lettuss-customer-portal/lettuss-portal/neo4j_customer_submission/* .ignore # Neo4j customer submission directory
