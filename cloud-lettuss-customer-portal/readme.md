@@ -1,44 +1,27 @@
-# Customer Application
+# Lettus Customer Portal
 
+## Overview
+The customer portal provides login, registration, property browsing, and subscription management for Lettus tenants. It connects to the Lettus Properties API and renders the UI from `lettuss-portal/public`.
 
-**Lazy Customer App starts everything**
-```
-bash -x customer-app-start 1 
-```
-
-**To start it**
+## Local development (Docker)
+Start the portal:
 ```
 docker compose up
 ```
-If changes to build scripts has been made, **rebuild**
+
+Rebuild after script or Docker changes:
 ```
 docker compose up --build
 ```
 
----
+## Startup helper script
+Start the full portal stack with the helper:
+```
+bash -x customer-app-start.sh 4 0
+```
 
-##  Customer Submission - App 4  
+## Local URL
+- Portal: `https://lettusslettings.localhost/customer-portal/login`
 
-UI: http://localhost:8504  
-
-- Customer Portal - Submission Application
-- New Cloud Risk - Insurance Risk Measurement
-- Manually insert information about cloud usage to calculate your cloud risk graph
-- 
-![customer submission cloud risk information 1](images/CustomerPortal_SubmissionAnalysis-1-1.png)
-![customer submission cloud risk information 2](images/CustomerPortal_SubmissionAnalysis-1-2.png)
-![customer submission cloud risk information 3](images/CustomerPortal_SubmissionAnalysis-1-3.png)
--
-- Obtain risk ratings for your cloud service usage - from your Cloud.Risk.Graph - 
-![customer submission cloud risk information - graph](images/CustomerPortal_SubmissionAnalysis-1-4.png)
-- 
-![customer submission cloud risk information 1](images/CustomerPortal_SubmissionAnalysis-2-1.png)
-![customer submission cloud risk information 2](images/CustomerPortal_SubmissionAnalysis-2-2.png)
-![customer submission cloud risk information 3](images/CustomerPortal_SubmissionAnalysis-2-3.png)
--
-- Obtain risk ratings for your cloud service usage - from your Cloud.Risk.Graph - 
-![customer submission cloud risk information - graph](images/CustomerPortal_SubmissionAnalysis-2-4.png)
--
-- Export Your Cloud.Risk.Graph to low-level detail
-![customer submission cloud risk information - graph png](images/graph.png)
--
+## Portal UI assets
+Static assets are served from `lettuss-portal/public/`. Update these files when changing the customer-facing UI.
