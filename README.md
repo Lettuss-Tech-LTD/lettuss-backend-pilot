@@ -2,6 +2,10 @@
 
 ![Lettus Lettings preview](images/image1.png)
 
+# Lettuss Lettings - API Properties
+
+![Lettuss Properties API preview](images/image2.png)
+
 ## Overview
 - Rental listings API with chronological publication ordering.
 - End-user portal for browsing, searching, and subscribing to rentals.
